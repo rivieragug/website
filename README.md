@@ -3,14 +3,6 @@ Install procedure
 Here is a procedure to install all pre-requisites softwares. Links section gives you the URL. Then each section gives you the installion command. We recommand you do the install before the WE
 
 For Windows configuration all zip, exe can be found on key
-Available Targets
-------------------
-**ffff**
-
-	html-generate-views [domainClass] [optional viewName]
-	html-generate-controllers [domainClass]
-	html-generate-all [domainClass] [optional viewName]
-
 
 Links
 -----
@@ -34,11 +26,11 @@ Linux
 
 _Warning_: this install intructions is only for Ubuntu-debian based distribution
 
-1. Java sun 1.7 update 5
+**1. Java sun 1.7 update 5**
 
-* download see link above
+*download see link above*
 
-* command
+*command*
 
 	cd /usr/lib/jvm
 	sudo tar xvzf ~/jdk-7u5-linux-*.tar.gz
@@ -51,16 +43,16 @@ _Warning_: this install intructions is only for Ubuntu-debian based distribution
 	sudo update-alternatives --config javaws
 	(optional)sudo update-alternatives --config mozilla-javaplugin.so
 
-* verify installation
+*verify installation*
 
 	java -version
 
-2. GGTS IDE
+**2. GGTS IDE**
 
 	cd _where_you_want_
 	tar -xzf groovy-grails-tool-suite-3.0.0.M3-e4.2-linux-gtk-x86_64.tar.gz
 
-3. Groovy 1.8.7
+**3. Groovy 1.8.7**
 
 	sudo add-apt-repository ppa:groovy-dev/groovy
 	sudo apt-get update
