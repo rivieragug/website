@@ -200,8 +200,6 @@ Apple supplies their own version of Java. Use the Software Update feature (avail
 
 	ruby <(curl -fsSk https://raw.github.com/mxcl/homebrew/go)
 
-
-
 FreeBDS
 -------
 Sorry Pascal but I think you are the only one. So help yourself.
