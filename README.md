@@ -7,20 +7,18 @@ For Windows configuration all zip, exe can be found on key
 Links
 -----
 1. Java sun 1.7 update 5
-
-	<http://www.oracle.com/technetwork/java/javase/downloads/jdk7-downloads-1637583.html>
+<http://www.oracle.com/technetwork/java/javase/downloads/jdk7-downloads-1637583.html>
 	
 2. GGTS
-
 <http://www.springsource.org/downloads/sts>
+
 3. Groovy 1.8.7
-
 <http://groovy.codehaus.org/Download>
+
 4. Grails 2.1.0
-
 <http://grails.org/Download/>
-5. Git 
 
+5. Git 
 <http://git-scm.com/>
 
 Linux
