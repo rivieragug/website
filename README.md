@@ -53,9 +53,11 @@ _Warning_: this install intructions is only for Ubuntu-debian based distribution
 	sudo add-apt-repository ppa:groovy-dev/groovy
 	sudo apt-get update
 	sudo apt-get install groovy 1.8.7
+
 *verify installation*
 
 	groovy --version
+
 *switch between versions*
 
 	sudo update-alternatives --config groovy
@@ -66,105 +68,135 @@ _Warning_: this install intructions is only for Ubuntu-debian based distribution
 	sudo apt-get update
 	sudo apt-get install grails 2.1.0
 
-* switch between versions
+*switch between versions*
 
 	sudo update-alternatives --config grails
 
-* verify installation
+*verify installation*
 
 	grails --version
 
-5. Git
+**5. Git**
 
 	sudo apt-get install git
 
 Windows
 -------
 
-1. Java sun 1.7 update 5
+**1. Java sun 1.7 update 5**
 
-* download see link above
-* extract with winzip where you want
-* add JAVA_HOME to System environment variables
-* add %JAVA_HOME%\bin to your PATH
-* verify installation
+*download see link above*
+
+*extract with winzip where you want*
+
+*add JAVA_HOME to System environment variables*
+
+*add %JAVA_HOME%\bin to your PATH*
+
+*verify installation*
 
 	java -version
 
-2. GGTS IDE
+**2. GGTS IDE**
 
-* download see link above
-* extract with winzip where you want
-* create shortcut on your desktop
+*download see link above*
 
-3. Groovy 1.8.7
+*extract with winzip where you want*
 
-* download see link above
-* extract with winzip where you want
-* add GROOVY_HOME to System environment variables
-* add %GROOVY_HOME%\bin to your PATH
-* verify installation
+*create shortcut on your desktop*
+
+**3. Groovy 1.8.7**
+
+*download see link above*
+
+*extract with winzip where you want*
+
+*add GROOVY_HOME to System environment variables*
+
+*add %GROOVY_HOME%\bin to your PATH*
+
+*verify installation*
 
 	groovy --version
 
-4. Grails 2.1.0
-* download see link above
-* extract with winzip where you want
-* add GRAILS_HOME to System environment variables
-* add %GRAILS_HOME%\bin to your PATH
-* verify installation
+**4. Grails 2.1.0**
+
+*download see link above*
+
+*extract with winzip where you want*
+
+*add GRAILS_HOME to System environment variables*
+
+*add %GRAILS_HOME%\bin to your PATH*
+
+*verify installation*
 
 	grails --version
 
-5. Git
+**5. Git**
 
-* download
+*download*
+
 <http://git-scm.com/download/win>
 
-* run the exe
+*run the exe*
 
 MacOS
 -----
-1. Java sun 1.7 update 5
+
+**1. Java sun 1.7 update 5**
+
 Apple supplies their own version of Java. Use the Software Update feature (available on the Apple menu) to check that you have the most up-to-date version of Java for your Mac. 
-* verify installation
+
+*verify installation*
 
 	java -version
 
-2. GGTS IDE
+**2. GGTS IDE**
 
-3. Groovy 1.8.7
-* download see link above
-* unpack it into some file on your local file system
-* set your GROOVY_HOME environment variable to the directory you unpacked the distribution
-* add GROOVY_HOME/bin to your PATH environment variable
-* verify installation
+**3. Groovy 1.8.7**
+
+*download see link above*
+
+*unpack it into some file on your local file system*
+
+*set your GROOVY_HOME environment variable to the directory you unpacked the distribution*
+
+*add GROOVY_HOME/bin to your PATH environment variable*
+
+*verify installation*
 
 	groovy --version
 
-4. Grails 2.1.0
+**4. Grails 2.1.0**
 
-* download see link above
-* unpack it into some file on your local file system
-* set your GRAILS_HOME environment variable to the directory you unpacked the distribution
-* add GRAILS_HOME/bin to your PATH environment variable
-* verify installation
+*download see link above*
+
+*unpack it into some file on your local file system*
+
+*set your GRAILS_HOME environment variable to the directory you unpacked the distribution*
+
+*add GRAILS_HOME/bin to your PATH environment variable*
+
+*verify installation*
 
 	grails --version
 
-5. Git
+**5. Git**
 
-* download
+*download*
+
 <http://git-scm.com/download/mac>
 
-* install the dmg
+*install the dmg*
 
-6. Alternatively, you can try Homebrew to deal with your install
+**6. Alternatively, you can try Homebrew to deal with your install**
 
-* link
+*link*
+
 <http://mxcl.github.com/homebrew/>
 
-* command
+*command*
 
 	ruby <(curl -fsSk https://raw.github.com/mxcl/homebrew/go)
 
@@ -179,7 +211,6 @@ GitHub
 
 * create a github account
 <https://github.com>
-
 
 * give us your github username, so we can add you as a collaborator
 
