@@ -8,12 +8,17 @@ Links
 -----
 1. Java sun 1.7 update 5
 <http://www.oracle.com/technetwork/java/javase/downloads/jdk7-downloads-1637583.html>
+
 2. GGTS
 <http://www.springsource.org/downloads/sts>
+
+click on _other downloads and look for GROOVY/GRAILS TOOL SUITE 3.0.0
 3. Groovy 1.8.7
 <http://groovy.codehaus.org/Download>
+
 4. Grails 2.1.0
 <http://grails.org/Download/>
+
 5. Git 
 <http://git-scm.com/>
 
@@ -207,12 +212,13 @@ Sorry Pascal but I think you are the only one. So help yourself.
 GitHub
 ======
 
-* create a github account
+*create a github account*
+
 <https://github.com>
 
-* give us your github username, so we can add you as a collaborator
+*give us your github username, so we can add you as a collaborator*
 
-* please clone as usual
+*please clone as usual*
 
 	git clone https://github.com/rivieragug/website.git
 
