@@ -8,7 +8,8 @@ Links
 -----
 1. Java sun 1.7 update 5
 
-<http://www.oracle.com/technetwork/java/javase/downloads/jdk7-downloads-1637583.html>
+	<http://www.oracle.com/technetwork/java/javase/downloads/jdk7-downloads-1637583.html>
+	
 2. GGTS
 
 <http://www.springsource.org/downloads/sts>
