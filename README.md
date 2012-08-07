@@ -3,6 +3,13 @@ Install procedure
 Here is a procedure to install all pre-requisites softwares. Links section gives you the URL. Then each section gives you the installion command. We recommand you do the install before the WE
 
 For Windows configuration all zip, exe can be found on key
+Available Targets
+=================
+
+	html-generate-views [domainClass] [optional viewName]
+	html-generate-controllers [domainClass]
+	html-generate-all [domainClass] [optional viewName]
+
 
 Links
 -----
