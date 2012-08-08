@@ -49,12 +49,7 @@ _Warning_: this install intructions is only for Ubuntu-debian based distribution
 
 	java -version
 
-**2. GGTS IDE**
-
-	cd _where_you_want_
-	tar -xzf groovy-grails-tool-suite-3.0.0.M3-e4.2-linux-gtk-x86_64.tar.gz
-
-**3. Groovy 1.8.6**
+**2. Groovy 1.8.6**
 
 	sudo add-apt-repository ppa:groovy-dev/groovy
 	sudo apt-get update
@@ -68,7 +63,7 @@ _Warning_: this install intructions is only for Ubuntu-debian based distribution
 
 	sudo update-alternatives --config groovy
 
-**4. Grails 2.1.0**
+**3. Grails 2.1.0**
 
 	sudo add-apt-repository ppa:groovy-dev/grails
 	sudo apt-get update
@@ -81,6 +76,11 @@ _Warning_: this install intructions is only for Ubuntu-debian based distribution
 *verify installation*
 
 	grails --version
+
+**4. GGTS IDE**
+
+	cd _where_you_want_
+	tar -xzf groovy-grails-tool-suite-3.0.0.M3-e4.2-linux-gtk-x86_64.tar.gz
 
 **5. Git**
 
@@ -103,15 +103,7 @@ Windows
 
 	java -version
 
-**2. GGTS IDE**
-
-*download see link above*
-
-*extract with winzip where you want*
-
-*create shortcut on your desktop*
-
-**3. Groovy 1.8.6**
+**2. Groovy 1.8.6**
 
 *download see link above*
 
@@ -125,7 +117,7 @@ Windows
 
 	groovy --version
 
-**4. Grails 2.1.0**
+**3. Grails 2.1.0**
 
 *download see link above*
 
@@ -138,6 +130,14 @@ Windows
 *verify installation*
 
 	grails --version
+
+**4. GGTS IDE**
+
+*download see link above*
+
+*extract with winzip where you want*
+
+*create shortcut on your desktop*
 
 **5. Git**
 
@@ -158,9 +158,7 @@ Apple supplies their own version of Java. Use the Software Update feature (avail
 
 	java -version
 
-**2. GGTS IDE**
-
-**3. Groovy 1.8.6**
+**2. Groovy 1.8.6**
 
 *download see link above*
 
@@ -174,7 +172,7 @@ Apple supplies their own version of Java. Use the Software Update feature (avail
 
 	groovy --version
 
-**4. Grails 2.1.0**
+**3. Grails 2.1.0**
 
 *download see link above*
 
@@ -187,6 +185,10 @@ Apple supplies their own version of Java. Use the Software Update feature (avail
 *verify installation*
 
 	grails --version
+
+**4. GGTS IDE**
+
+*Download groovy-grails-tool-suite-3.0.0.M3-e4.2-macosx-cocoa-x86_64-installer.dmg*
 
 **5. Git**
 
