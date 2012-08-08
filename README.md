@@ -219,6 +219,15 @@ FreeBSD
 -------
 Sorry Pascal but I think you are the only one. So help yourself. It's not mainstream indeed.
 
+
+GGTS
+=====
+
+*Open GGTS*
+*Go to Windows->Preferences*
+*In filter text type grails*
+*Add Grails 2.1.0*
+
 GitHub
 ======
 
