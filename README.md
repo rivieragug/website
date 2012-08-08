@@ -12,7 +12,7 @@ Links
 
 click on _OTHER DOWNLOADS >_ and look for GROOVY/GRAILS TOOL SUITE 3.0.0
 
-* Groovy 1.8.7
+* Groovy 1.8.6
 <http://groovy.codehaus.org/Download>
 
 * Grails 2.1.0
@@ -54,11 +54,11 @@ _Warning_: this install intructions is only for Ubuntu-debian based distribution
 	cd _where_you_want_
 	tar -xzf groovy-grails-tool-suite-3.0.0.M3-e4.2-linux-gtk-x86_64.tar.gz
 
-**3. Groovy 1.8.7**
+**3. Groovy 1.8.6**
 
 	sudo add-apt-repository ppa:groovy-dev/groovy
 	sudo apt-get update
-	sudo apt-get install groovy 1.8.7
+	sudo apt-get install groovy-1.8
 
 *verify installation*
 
@@ -111,7 +111,7 @@ Windows
 
 *create shortcut on your desktop*
 
-**3. Groovy 1.8.7**
+**3. Groovy 1.8.6**
 
 *download see link above*
 
@@ -160,7 +160,7 @@ Apple supplies their own version of Java. Use the Software Update feature (avail
 
 **2. GGTS IDE**
 
-**3. Groovy 1.8.7**
+**3. Groovy 1.8.6**
 
 *download see link above*
 
