@@ -72,6 +72,13 @@ _Warning_: this install intructions is only for Ubuntu-debian based distribution
 *switch between versions*
 
 	sudo update-alternatives --config grails
+	
+*correct stupid bug already submitted*
+	
+	cd /usr/share/grails/2.1.0/bin
+	edit the file startGrails
+	comment the third line and replace with
+	export JAVA_HOME=$(update-alternatives --query java | grep Value | sed 's_^Value: __g' | sed 's/\/bin\/java//g')
 
 *verify installation*
 
