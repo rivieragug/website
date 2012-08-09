@@ -244,6 +244,14 @@ GitHub
 Continious Delivery
 ===================
 
+=> in Config.groovy
+
+	grails.plugin.cloudfoundry.username = 'rivieragugcoding@gmail.com'
+	grails.plugin.cloudfoundry.password = 'codingweekend'
+
+=> to push in cloud foundry, in buildConfig.groovy
+
+	mavenRepo "http://maven.springframework.org/milestone/"
 
 See You on Friday
 ==================
