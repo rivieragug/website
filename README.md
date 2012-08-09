@@ -241,6 +241,9 @@ GitHub
 
 	git clone https://github.com/rivieragug/website.git
 
+Continious Delivery
+===================
+
 
 See You on Friday
 ==================
