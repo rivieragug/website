@@ -215,6 +215,38 @@ Apple supplies their own version of Java. Use the Software Update feature (avail
 
 	ruby <(curl -fsSk https://raw.github.com/mxcl/homebrew/go)
 
+*** Groovy 1.8.6
+
+As the last availble version of Groovy in homebrew is 2.0.0, here is the little trick to install 1.8.6:
+
+	# cd to your homebrew dir. Usually /usr/local/
+	cd /usr/local/ 
+	
+	# list older versions
+	brew versions groovy
+	
+	# copy/paste the gt command in front of v1.8.6
+	git checkout b688a91 Library/Formula/groovy.rb
+	
+	# proceed install
+	brew install groovy
+
+Add `GROOVY_HOME` to your environement (edit your ~/.bash_profile)
+
+	export GROOVY_HOME=/usr/local/Cellar/groovy/1.8.6/libexec
+
+*** Grails 2.1.0
+
+Install latest grails:
+
+	brew install grails
+
+Add `GRAILS_HOME` to your environement (edit your ~/.bash_profile)
+
+	export GRAILS_HOME=/usr/local/Cellar/grails/2.1.0/libexec
+
+
+
 FreeBSD
 -------
 Sorry Pascal but I think you are the only one. So help yourself. It's not mainstream indeed.
