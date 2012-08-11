@@ -1,6 +1,0 @@
-package org.ughub
-
-class PostController {
-
-    def index() { }
-}
