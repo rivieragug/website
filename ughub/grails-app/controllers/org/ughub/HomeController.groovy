@@ -1,4 +1,4 @@
-package ughub
+package org.ughub
 
 class HomeController {
 
