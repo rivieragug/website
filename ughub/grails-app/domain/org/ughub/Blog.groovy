@@ -1,7 +1,9 @@
 package org.ughub
 
+import java.util.Set;
+
 class Blog {
-	
+	Set tags
 	String name
 	String description
 	Group group

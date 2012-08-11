@@ -1,6 +1,6 @@
 package org.ughub
 
-class PostController {
+class TagController {
 
     def index() { }
 }
