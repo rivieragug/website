@@ -39,8 +39,8 @@ body {
 				<sec:ifLoggedIn>
 					<a class="brand" href="#">Riviera GUG</a>
 					<div class="btn-group pull-right">
-						<a class="btn dropdown-toggle" data-toggle="dropdown" href="${g.createLink(controller: "member", action:"show")}">
-							<i class="icon-user"></i>&nbsp;<ug:currentMember prop="firstName"/> <ug:currentMember prop="lastName"/> 
+						<a class="btn dropdown-toggle" data-toggle="dropdown" href="${g.createLink(controller: "user", action:"show")}">
+							<i class="icon-user"></i>&nbsp;<ug:currentUser prop="firstName"/> <ug:currentUser prop="lastName"/> 
 							<span class="caret"></span>
 						</a>
 						<ul class="dropdown-menu">

@@ -39,30 +39,27 @@ class UserController {
 	 */
 	def save() {
 		def username = params['username']
-		def us = new User(params)
-		def m = new User(params)
-		m.user = us
-		def u = User.findByUsername(username)
-		if (u == null){
-			//create
-			us.enabled = true
+		def u = new User(params)
+    
+    if (User.findByUsername(username) == null){
+      //create
+			u.enabled = true
 			//openid
 			String openId = session[OIAFH.LAST_OPENID_USERNAME]
 			if (openId != null){
-				us.addToOpenIds(url: openId)
-				us.password = null
+				u.addToOpenIds(url: openId)
+				u.password = null
 			}
 			
-			us.save(failOnError : true)
-			m.save(failOnError : true)
+			u.save(failOnError : true)
 			
 			//assign default role
 			def authority = Authority.findByAuthority('ROLE_BASE')
-			new UserAuthority(user : us, authority : authority).save(failOnError : true)
+			new UserAuthority(user : u, authority : authority).save(failOnError : true)
 			
 			redirect(controller : 'home')	
 		}else {
-			flash.put('user', m)
+			flash.put('user', u)
 			flash.message='Username ' + username + ' already present'
 			redirect(action : 'create')
 		}

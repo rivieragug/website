@@ -12,7 +12,7 @@ class UserTagLib {
      */
 	def currentUser = { attrs ->
 		def user = userService.currentUser
-
+		
 		def propVal = (user."${attrs.prop}")?.toString()
 
 		out << propVal

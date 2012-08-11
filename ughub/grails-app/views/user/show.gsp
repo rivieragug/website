@@ -27,9 +27,9 @@
 
 				<dl>
 				
-          <g:if test="${userInstance?.user?.username}">
-            <dt><g:message code="user.user.username.label" default="Username" /></dt>
-              <dd><g:fieldValue bean="${userInstance.user}" field="username"/></dd>
+          <g:if test="${userInstance?.username}">
+            <dt><g:message code="user.username.label" default="Username" /></dt>
+              <dd><g:fieldValue bean="${userInstance}" field="username"/></dd>
           </g:if>
         
           <dt><g:message code="user.groups.label" default="Groups" /></dt>
