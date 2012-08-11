@@ -21,8 +21,9 @@ body {
 	padding: 9px 0;
 }
 </style>
-<link href="../draft/assets/css/application.css" rel="stylesheet">
+<!-- link href="../draft/assets/css/application.css" rel="stylesheet"-->
 
+<r:require modules="ughub" />
 <r:require modules="bootstrap" />
 <g:layoutHead />
 <r:layoutResources />
