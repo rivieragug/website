@@ -2,14 +2,14 @@
 <!doctype html>
 <html>
 	<head>
-		<meta name="layout" content="ughub-main">
+		<meta name="layout" content="ughub-show">
 		<g:set var="entityName" value="${message(code: 'sponsor.label', default: 'Sponsor')}" />
 		<title><g:message code="default.create.sponsor" args="[entityName]" /></title>
 	</head>
 	<body>
 		<div class="row-fluid">
 			
-			<div class="span3">
+			<div class="span2 well sidebar-nav">
 				<div class="well">
 					<ul class="nav nav-list">
 						<li class="nav-header">${entityName}</li>
@@ -29,7 +29,7 @@
 				</div>
 			</div>
 			
-			<div class="span9">
+			<div class="span8 content">
 
 				<div class="page-header">
 					<h1><g:message code="default.create.sponsor" /></h1>
