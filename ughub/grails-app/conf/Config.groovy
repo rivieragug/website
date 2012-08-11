@@ -105,7 +105,9 @@ grails.plugins.springsecurity.requestMap.className = 'org.ughub.Requestmap'
 grails.plugins.springsecurity.securityConfigType = "InterceptUrlMap"
 
 grails.plugins.springsecurity.interceptUrlMap = [
-	'/home/**':      ['IS_AUTHENTICATED_ANONYMOUSLY'],
-  '/login/**':     ['IS_AUTHENTICATED_ANONYMOUSLY'],
-	'/**':           ['ROLE_BASE','IS_AUTHENTICATED_FULLY']
+	'/home/**':       ['IS_AUTHENTICATED_ANONYMOUSLY'],
+  '/login/**':      ['IS_AUTHENTICATED_ANONYMOUSLY'],
+  '/member/create': ['IS_AUTHENTICATED_ANONYMOUSLY'],
+  '/member/save':   ['IS_AUTHENTICATED_ANONYMOUSLY'],
+	'/**':            ['ROLE_BASE','IS_AUTHENTICATED_FULLY']
  ]
