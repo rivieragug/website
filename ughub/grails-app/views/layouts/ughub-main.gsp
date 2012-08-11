@@ -37,7 +37,6 @@
                   <g:link controller='member'>Login</g:link>
                 </li> 
               </sec:ifNotLoggedIn>
-            </li>
           </ul>
         </div>
       </div>
