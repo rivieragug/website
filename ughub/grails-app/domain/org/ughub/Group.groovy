@@ -9,6 +9,7 @@ class Group {
 	}
 
 	static mapping = {
+		name()
         collection "ugroup"
     }
 }
