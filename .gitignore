@@ -12,3 +12,6 @@ target
 /ughub/target-eclipse
 .classpath
 .project
+application.properties
+.metadata
+Servers/
