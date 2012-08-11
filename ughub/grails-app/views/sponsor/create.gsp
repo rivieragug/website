@@ -53,6 +53,8 @@
 					<g:form class="form-horizontal" action="create" >
 						<fieldset>
 							<f:all bean="sponsorInstance"/>
+						<g:textField name="comauto" style="width: 300px;"> </g:textField>
+						
 							<div class="form-actions">
 								<button type="submit" class="btn btn-primary">
 									<i class="icon-ok icon-white"></i>
