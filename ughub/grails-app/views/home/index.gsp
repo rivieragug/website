@@ -1,6 +1,6 @@
 <html>
 <head>
-  <meta name="layout" content="ughub-main"/>
+  <meta name="layout" content="ughub-show"/>
 </head>
 <body>
 	<div class="row-fluid">

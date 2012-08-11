@@ -37,7 +37,10 @@ body {
 					<span class="icon-bar"></span> <span class="icon-bar"></span>
 				</a>
 				<sec:ifLoggedIn>
-					<a class="brand" href="#">Riviera GUG</a>
+					<ul class="nav">
+			        	<li><g:link controller="home"><i class="icon-home icon-white"></i></g:link></li>
+			        </ul>
+					<a class="brand" href="${g.createLink(controller: "home")}">UG-hub Home!</a>
 					<div class="btn-group pull-right">
 						<a class="btn dropdown-toggle" data-toggle="dropdown" href="${g.createLink(controller: "user", action:"show")}">
 							<i class="icon-user"></i>&nbsp;<ug:currentUser prop="firstName"/> <ug:currentUser prop="lastName"/> 
@@ -66,7 +69,7 @@ body {
 
 				<div class="nav-collapse">
 					<ul class="nav">
-						<li class="active"><a href="#">Home</a></li>
+						<!--<li class="active"><a href="#">Home</a></li>-->
 						<li><a href="#about">About</a></li>
 						<li><a href="#contact">Contact</a></li>
 						<!--li><a href="#contact">Admin</a></li-->
