@@ -7,22 +7,36 @@ def grailsApplication
 def tagService
     def init = { servletContext ->
 //    	if (Environment.current == Environment.DEVELOPMENT){
-    		if (!Group.count()) {
+			def gug = Group.findByName("Coding Week-End Group")
+    		if (!gug) {
     			def logo = new File('testdata', 'logo.jpeg').bytes
     			def img = new Image(data: logo, mimetype: 'image/jpeg').save(failOnError: true)
-				new Group(
+				gug = new Group(
 					name: "Coding Week-End Group",
 					description: "Pizzas & Beers are legions",
 					logoPath: "/tmp",
 					minilogo: img
 				).save(failOnError: true)
+
 	        }
+
+	        // create some events
+	        if (!gug.events.size()) {
+				def now = new Date()
+				3.times {
+					def event = new Event(
+						name: "Event ${it}", type: "Fake event", date: now + it*2
+					).save(failOnError: true)
+					gug.addToEvents(event)
+					gug.save()
+				}
+			}
     		setUpUsers()
-			setUpSponsors()
+			//setUpSponsors()
 //		}
 			addTagsToDomainClasses()
 			
-			}
+	}
 			
     
 	

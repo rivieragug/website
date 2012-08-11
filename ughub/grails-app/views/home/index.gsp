@@ -24,6 +24,9 @@
 		<div class="span5">
 			<h2>The Best User Groups</h2>
 			<g:include controller="group" action="listShort"/>
+
+			<h2>Upcoming Events</h2>
+			<g:include controller="event" action="listShort"/>			
 		</div>
 	</div>
 </body>
