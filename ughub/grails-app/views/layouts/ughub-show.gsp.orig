@@ -25,7 +25,6 @@ body {
 <r:require modules="bootstrap" />
 <g:layoutHead />
 <r:layoutResources />
-<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.21/jquery-ui.min.js"></script>
 </head>
 <body>
 
@@ -39,8 +38,8 @@ body {
 				<sec:ifLoggedIn>
 					<a class="brand" href="#">Riviera GUG</a>
 					<div class="btn-group pull-right">
-						<a class="btn dropdown-toggle" data-toggle="dropdown" href="${g.createLink(controller: "member", action:"show")}">
-							<i class="icon-user"></i>&nbsp;<ug:currentMember prop="firstName"/> <ug:currentMember prop="lastName"/> 
+						<a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
+							<i class="icon-user"></i>&nbsp;<ug:currentMember prop="user" /> 
 							<span class="caret"></span>
 						</a>
 						<ul class="dropdown-menu">
@@ -57,9 +56,9 @@ body {
 							<i class="icon-user"></i> <span class="caret"></span>
 						</a>
 						<ul class="dropdown-menu">
-							<li><g:link controller='user'>Login</g:link></li>
+							<li><g:link controller='member'>Login</g:link></li>
 							<li class="divider"></li>
-							<li><g:link controller='user' action='create'>Register</g:link></li>
+							<li><g:link controller='member' action='create'>Register</g:link></li>
 						</ul>
 					</div>
 				</sec:ifNotLoggedIn>

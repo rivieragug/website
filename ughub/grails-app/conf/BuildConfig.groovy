@@ -63,5 +63,6 @@ grails.project.dependency.resolution = {
 		compile ":cloud-foundry:1.2.3"
 		compile ":spring-security-openid:1.0.4"
 		compile ":console:1.2"
+        compile ":markdown:1.0.0.RC1"
     }
 }

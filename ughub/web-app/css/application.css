@@ -5,7 +5,7 @@ body {
 }
 
 .content {
-  background: #FCFCF9 url(../img/bg-content.png) repeat;
+  background: #FCFCF9 url("../img/bg-content.png") repeat;
   padding: 15px 30px;
 
   -webkit-border-radius: 20px;
