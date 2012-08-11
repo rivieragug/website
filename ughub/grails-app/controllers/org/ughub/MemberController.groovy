@@ -6,6 +6,11 @@ import org.springframework.security.core.authority.AuthorityUtils;
 class MemberController {
     def scaffold = true
 	
+
+    def index() {
+
+    }
+
 	/**
 	 * Saves a and a profile if that username does not exist.
 	 * @return
