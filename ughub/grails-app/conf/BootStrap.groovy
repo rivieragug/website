@@ -9,12 +9,13 @@ def tagService
 //    	if (Environment.current == Environment.DEVELOPMENT){
     		if (!Group.count()) {
     			def logo = new File('testdata', 'logo.jpeg').bytes
+    			def img = new Image(data: logo, mimetype: 'image/jpeg').save(failOnError: true)
 				new Group(
 					name: "Coding Week-End Group",
 					description: "Pizzas & Beers are legions",
 					logoPath: "/tmp",
-					minilogo: logo)
-				.save(failOnError: true)
+					minilogo: img
+				).save(failOnError: true)
 	        }
     		setUpUsers()
 //		}
@@ -31,7 +32,15 @@ def tagService
 		def adminUser = User.findByUsername('admin')
 		if (adminUser == null){
 			adminUser = new User(username: 'admin', password: 'admin',enabled: true).save(failOnError: true)
+			def adminMember = new Member(firstName: 'admin', lastName: 'admin')
+			adminMember.user = adminUser
+			adminMember.save(failOnError: true)
+			
 		}
+		
+		
+		//admin member
+		
 		
 		for (r in ['ROLE_ADMIN','ROLE_BASE','ROLE_POWER']) {
 			def myRole = Authority.findByAuthority(r)

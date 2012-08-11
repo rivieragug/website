@@ -8,4 +8,6 @@ class Member {
 	static hasMany = [groups:Group]
 	static constraints = {
 	}
+    String toString() { "$firstName $lastName" }
+
 }

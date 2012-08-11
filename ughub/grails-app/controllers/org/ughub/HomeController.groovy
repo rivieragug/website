@@ -1,10 +1,6 @@
 package org.ughub
 
 import org.codehaus.groovy.grails.plugins.springsecurity.SpringSecurityUtils
-
-
-import org.codehaus.groovy.grails.plugins.springsecurity.openid.OpenIdAuthenticationFailureHandler as OIAFH
-
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken
 import org.springframework.security.core.AuthenticationException
 import org.springframework.security.web.savedrequest.DefaultSavedRequest

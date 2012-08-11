@@ -10,4 +10,6 @@ class Event {
 		name()
 		type()
     }
+
+    String toString() { name }
 }

@@ -10,4 +10,7 @@ class Sponsor {
 	
     static constraints = {
     }
+
+    String toString() { companyName }
+
 }
