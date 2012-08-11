@@ -18,6 +18,9 @@
       <div class="navbar-inner">
         <div class="container">
           <a class="brand" href="#"> UG-hub Home!</a>
+          <ul class="nav">
+            <li><g:link controller="home"><i class="icon-home icon-white"></i></g:link></li>
+          </ul>
           <ul class="nav pull-right">
             
               <sec:ifLoggedIn>
