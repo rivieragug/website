@@ -1,6 +1,0 @@
-package org.ughub
-
-class PostCommentController {
-
-    def index() { }
-}
