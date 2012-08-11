@@ -1,7 +1,7 @@
 <!doctype html>
 <html>
 	<head>
-		<meta name="layout" content="main"/>
+		<meta name="layout" content="ughub-main"/>
 		<title>Welcome to Grails</title>
 		<style type="text/css" media="screen">
 			#status {
