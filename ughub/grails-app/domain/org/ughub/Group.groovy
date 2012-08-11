@@ -9,12 +9,10 @@ class Group {
 	static constraints = {
 		name()		
 	}
-
+    String toString() {name}
 	static mapping = {
 		collection "ugroup"
 		//sponsors(nullable:true)
     }
-
-    String toString() { name }
 	
 }
