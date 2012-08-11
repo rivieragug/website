@@ -6,12 +6,14 @@ class Group {
 	String logoPath
 	static hasMany = [members: Member, events: Event, sponsors: Sponsor]
 	static constraints = {
+		name()		
 	}
 
 	static mapping = {
-		name()
-        collection "ugroup"
+		collection "ugroup"
 		//sponsors(nullable:true)
     }
+
+    String toString() { name }
 	
 }
