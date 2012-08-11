@@ -25,6 +25,7 @@ body {
 <r:require modules="bootstrap" />
 <g:layoutHead />
 <r:layoutResources />
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.21/jquery-ui.min.js"></script>
 </head>
 <body>
 
