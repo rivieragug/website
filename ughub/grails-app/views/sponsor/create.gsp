@@ -32,7 +32,7 @@
 			<div class="span9">
 
 				<div class="page-header">
-					<h1><g:message code="default.create.label" args="[entityName]" /></h1>
+					<h1><g:message code="default.create.sponsor" /></h1>
 				</div>
 
 				<g:if test="${flash.message}">
@@ -62,13 +62,11 @@
 						</fieldset>
 					</g:form>
 				</fieldset>
-				
-				<div style="floating:right">
-				  <img class='image' src='${sponsorInstance.logo}'/>
-				</div>
+
 				
 			</div>
 
 		</div>
+
 	</body>
 </html>

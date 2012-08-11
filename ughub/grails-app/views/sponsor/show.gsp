@@ -65,10 +65,10 @@
 						
 					</g:if>
 				
-					<g:if test="${sponsorInstance?.logo}">
-						<dt><g:message code="sponsor.logo.label" default="Logo" /></dt>
+					<g:if test="${sponsorInstance?.minilogo}">
+						<dt><g:message code="sponsor.minilogo.label" default="Minilogo" /></dt>
 						
-							<dd><g:fieldValue bean="${sponsorInstance}" field="logo"/></dd>
+							<dd><g:link controller="image" action="show" id="${sponsorInstance?.minilogo?.id}">${sponsorInstance?.minilogo?.encodeAsHTML()}</g:link></dd>
 						
 					</g:if>
 				
@@ -96,7 +96,13 @@
 				</g:form>
 
 			</div>
-
+			   <div class="sponsors">
+                 <div class="row-fluid">
+				   <g:img dir="draft/assets/img/" file="logo-sopra.png"/>
+				   <g:img dir="draft/assets/img/" file="logo-avisto.png"/>
+				   <g:img dir="draft/assets/img/" file="logo-les-satellites.png"/>
+                 </div>
+               </div>
 		</div>
 	</body>
 </html>
