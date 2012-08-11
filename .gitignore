@@ -10,3 +10,5 @@ target
 /ughub/web-app/WEB-INF/classes
 .class
 target-eclipse
+.classpath
+.project
