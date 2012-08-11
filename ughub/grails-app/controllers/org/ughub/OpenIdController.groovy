@@ -34,7 +34,7 @@ class OpenIdController {
 	 * a new account, or click through to linkAccount to associate the OpenID with an
 	 * existing local account.
 	 */
-	def auth = {
+	def auth2 = {
 
 		def config = SpringSecurityUtils.securityConfig
 

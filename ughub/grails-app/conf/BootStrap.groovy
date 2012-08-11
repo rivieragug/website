@@ -24,6 +24,9 @@ class BootStrap {
 			adminUser = new org.ughub.User(username: 'admin', password: 'admin',enabled: true).save(failOnError: true)
 		}
 		
+		//admin member
+		
+		
 		for (r in ['ROLE_ADMIN','ROLE_BASE','ROLE_POWER']) {
 			def myRole = org.ughub.Authority.findByAuthority(r)
 			if (myRole == null){
