@@ -29,7 +29,12 @@ class BootStrap {
 		def adminUser = User.findByUsername('admin')
 		if (adminUser == null){
 			adminUser = new User(username: 'admin', password: 'admin',enabled: true).save(failOnError: true)
+			def adminMember = new Member(firstName: 'admin', lastName: 'admin')
+			adminMember.user = adminUser
+			adminMember.save(failOnError: true)
+			
 		}
+		
 		
 		//admin member
 		
