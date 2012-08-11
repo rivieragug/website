@@ -55,6 +55,6 @@ grails.project.dependency.resolution = {
 		compile ":mongodb:1.0.0.GA"
         compile ':cache:1.0.0'
 		compile ":spring-security-core:1.2.7.3"
-		compile ":cloud-foundry:1.2.2"
+		compile ":cloud-foundry:1.2.3"
     }
 }
