@@ -4,11 +4,12 @@ class Sponsor {
 	String companyName
 	String description
 	URL website
-	URL logo
+	Image minilogo
 	static hasMany = [groups: Group] //TODO add Event
 	static belongsTo = Group
 	
     static constraints = {
+	  minilogo(nullable:true)	
     }
 
     String toString() { companyName }
