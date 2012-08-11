@@ -10,10 +10,19 @@
 	      		<h1>UG-hub Home!</h1>
 	      		<p>RivieraCWE is launching UG-hub tonight!</p>
 			</div>
-		    <g:form name="googleLogin" method="POST"  url ="${openIdPostUrl}"> 
-		    	<g:hiddenField name="${openidIdentifier}" value="${openidIdentifier}"/>
-		    	<g:submitButton name="googleLogin" value="Login with google... provided they allow us"/>
-		    </g:form>
+			<sec:ifNotLoggedIn>
+			    <g:form name="googleLogin" method="POST"  url ="${openIdPostUrl}"> 
+			    	<g:hiddenField name="${openidIdentifier}" value="${openidIdentifier}"/>
+			    	<g:submitButton name="googleLogin" value="Login with google... provided they allow us"/>
+			    </g:form>
+			</sec:ifNotLoggedIn>
+			<sec:ifLoggedIn>
+				<h2>A passion for a niche Tech ?</h2>
+				<g:link class='btn btn-large btn-primary' controller="group" action="create">
+					Create My Group Now !
+				</g:link> 
+			</sec:ifLoggedIn>
+
     	</div>
 
 		<div class="span5">
