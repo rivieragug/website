@@ -32,6 +32,9 @@ grails.mime.types = [
 // URL Mapping Cache Max Size, defaults to 5000
 //grails.urlmapping.cache.maxsize = 1000
 
+grails.plugin.cloudfoundry.username = 'rivieragugcoding@gmail.com'
+grails.plugin.cloudfoundry.password = 'codingweekend'
+
 // What URL patterns should be processed by the resources plugin
 grails.resources.adhoc.patterns = ['/images/*', '/css/*', '/js/*', '/plugins/*']
 
