@@ -9,12 +9,26 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <title><g:layoutTitle default="UGhub"/></title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+    <r:require modules="bootstrap"/>
     <g:layoutHead/>
     <r:layoutResources />
   </head>
   <body>
-    <g:layoutBody/>
+    <div class="navbar">
+      <div class="navbar-inner">
+        <div class="container">
+          <a class="brand" href="#"> UG-hub Home! </a>
+        </div>
+      </div>
+    </div>  
+    <div class="row-fluid">
+      <div class="span1"></div>
+      <div class="span10">
+        <g:layoutBody/>
+      </div>
+      <div class="span1"></div>
+    </div>
+
     <r:layoutResources />
   </body>
 </html> 
