@@ -98,4 +98,8 @@ grails.plugins.springsecurity.userLookup.userDomainClassName = 'org.ughub.User'
 grails.plugins.springsecurity.userLookup.authorityJoinClassName = 'org.ughub.UserAuthority'
 grails.plugins.springsecurity.authority.className = 'org.ughub.Authority'
 grails.plugins.springsecurity.requestMap.className = 'org.ughub.Requestmap'
-grails.plugins.springsecurity.securityConfigType = 'Requestmap'
+grails.plugins.springsecurity.securityConfigType = "InterceptUrlMap"
+
+grails.plugins.springsecurity.interceptUrlMap = [
+	'/*':            ['ROLE_ADMIN','IS_AUTHENTICATED_FULLY']
+ ]
