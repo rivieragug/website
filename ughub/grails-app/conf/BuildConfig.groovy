@@ -43,8 +43,12 @@ grails.project.dependency.resolution = {
         runtime ":jquery:1.7.2"
         runtime ":resources:1.1.6"
         runtime ":twitter-bootstrap:2.0.1.22"
-
-        // Uncomment these (or add new ones) to enable additional resources capabilities
+		
+		//compile ":searchable:0.6.3"
+		compile ":taggable:1.0.1"
+		compile ":tagcloud:0.3"
+        
+		// Uncomment these (or add new ones) to enable additional resources capabilities
         //runtime ":zipped-resources:1.0"
         //runtime ":cached-resources:1.0"
         //runtime ":yui-minify-resources:0.1.4"
