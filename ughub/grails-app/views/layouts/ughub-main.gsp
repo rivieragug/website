@@ -17,10 +17,29 @@
     <div class="navbar">
       <div class="navbar-inner">
         <div class="container">
-          <a class="brand" href="#"> UG-hub Home! </a>
+          <a class="brand" href="#"> UG-hub Home!</a>
+          <ul class="nav pull-right">
+            
+              <sec:ifLoggedIn>
+                <li class='active'><a href="#"><ug:currentMember prop="user"/></a></li>
+                <li>
+                  <g:link controller='logout'>Logout</g:link>
+                </li>
+              </sec:ifLoggedIn>
+              <sec:ifNotLoggedIn>
+                <li>
+                  <g:link controller='member' action='create'>Register</g:link>
+                </li> 
+                <li>
+                  <g:link controller='member'>Login</g:link>
+                </li> 
+              </sec:ifNotLoggedIn>
+            </li>
+          </ul>
         </div>
       </div>
     </div>  
+
     <div class="row-fluid">
       <div class="span1"></div>
       <div class="span10">

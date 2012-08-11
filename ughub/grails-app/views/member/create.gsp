@@ -3,15 +3,27 @@
   <meta name="layout" content="ughub-main"/>
 </head>
 <body>
-    <div class="hero-unit">
-      <h1>Member creation</h1>
+    <div class="well">
+      <h1>Register</h1>
       <g:message code="${flash.message}"/>
-      <g:form name="memberCreation" url="[action:'save',controller:'member']"> 
-      	UserName <g:textField  name="username" value="${username}" /><br>
-      	Name <g:textField name="firstName"/><br>
-      	Last Name <g:textField name="lastName"/><br>
-      	Password <g:passwordField  name="password"/><br>
-      	<g:submitButton name="create" value="Create" />
+      <g:form  class="form-horizontal" name="memberCreation" url="[action:'save',controller:'member']"> 
+      	<ug:formcontrol label='User Name'>
+          <g:textField name="username" value="${username}"/>
+        </ug:formcontrol>
+      	<ug:formcontrol label='Name'>
+          <g:textField name="firstName"/>
+        </ug:formcontrol>
+      	<ug:formcontrol label='Last Name'>
+          <g:textField name="lastName"/>
+        </ug:formcontrol>
+      	<ug:formcontrol label='Password'>
+          <g:passwordField name="password"/>
+        </ug:formcontrol>
+
+        <div class="form-actions">
+      	  <g:submitButton class="btn btn-primary" name="create" value="Register" />
+        </div>
+
       </g:form>
     </div>
 </body>

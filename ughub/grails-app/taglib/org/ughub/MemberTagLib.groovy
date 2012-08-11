@@ -12,7 +12,9 @@ class MemberTagLib {
      */
 	def currentMember = { attrs ->
 		def member = memberService.currentMember
-		def propVal = member?."$attrs.prop"
+
+		def propVal = (member."${attrs.prop}")?.toString()
+
 		out << propVal
 	}
 }
