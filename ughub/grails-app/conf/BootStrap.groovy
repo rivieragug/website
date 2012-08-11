@@ -31,7 +31,8 @@ def tagService
 			def logo = new File('testdata', 'logo.jpeg').bytes
 			def img = new Image(data: logo, mimetype: 'image/jpeg').save(failOnError: true)
 			new Sponsor(companyName:"SOPRA", 
-				        description:"SSII intersted in J2EE based technologies", 
+				        description:"SSII intersted in J2EE based technologies",
+						 website:new URL("http://grails.org/"),
 						logoPath:"/tmp", 
 						minilogo:logo).save(failOnError: true)
 		
