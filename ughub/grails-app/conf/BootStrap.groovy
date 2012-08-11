@@ -10,7 +10,12 @@ class BootStrap {
 	        if (!org.ughub.Member.count()){
 	    		new org.ughub.Member(firstName: "Admin", lastName: "Admin", userName: "admin").save(failOnError: true)
 	    	}
-    	}
+    		if (!org.ughub.User.count()){
+				new org.ughub.User(username: 'admin', password: 'admin',enabled: true).save(failOnError: true)
+			}
+		}
+		
+		
     }
     def destroy = {
     }
