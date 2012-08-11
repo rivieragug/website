@@ -111,10 +111,12 @@ grails.plugins.springsecurity.openid.claimedIdentityFieldName = 'https://www.goo
 
 
 grails.plugins.springsecurity.interceptUrlMap = [
-	'/home/**':       ['IS_AUTHENTICATED_ANONYMOUSLY'],
-  '/login/**':      ['IS_AUTHENTICATED_ANONYMOUSLY'],
-  '/member/create': ['IS_AUTHENTICATED_ANONYMOUSLY'],
-  '/member/save':   ['IS_AUTHENTICATED_ANONYMOUSLY'],
-	'/**':            ['ROLE_BASE','IS_AUTHENTICATED_FULLY']
+	'/home/**':         ['IS_AUTHENTICATED_ANONYMOUSLY'],
+  '/login/**':        ['IS_AUTHENTICATED_ANONYMOUSLY'],
+  '/member/create':   ['IS_AUTHENTICATED_ANONYMOUSLY'],
+  '/member/save':     ['IS_AUTHENTICATED_ANONYMOUSLY'],
+  '/group/listShort': ['IS_AUTHENTICATED_ANONYMOUSLY'],
+  '/group/logo':      ['IS_AUTHENTICATED_ANONYMOUSLY'],
+	'/**':              ['ROLE_BASE','IS_AUTHENTICATED_FULLY']
  ]
 
