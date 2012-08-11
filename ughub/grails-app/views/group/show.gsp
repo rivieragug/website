@@ -32,6 +32,17 @@
 				</li>
 				</g:if>
 			
+				<g:if test="${groupInstance?.events}">
+				<li class="fieldcontain">
+					<span id="events-label" class="property-label"><g:message code="group.events.label" default="Events" /></span>
+					
+						<g:each in="${groupInstance.events}" var="e">
+						<span class="property-value" aria-labelledby="events-label"><g:link controller="event" action="show" id="${e.id}">${e?.encodeAsHTML()}</g:link></span>
+						</g:each>
+					
+				</li>
+				</g:if>
+			
 				<g:if test="${groupInstance?.logoPath}">
 				<li class="fieldcontain">
 					<span id="logoPath-label" class="property-label"><g:message code="group.logoPath.label" default="Logo Path" /></span>

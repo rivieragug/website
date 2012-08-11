@@ -10,6 +10,14 @@
 	<g:textField name="description" value="${groupInstance?.description}" />
 </div>
 
+<div class="fieldcontain ${hasErrors(bean: groupInstance, field: 'events', 'error')} ">
+	<label for="events">
+		<g:message code="group.events.label" default="Events" />
+		
+	</label>
+	<g:select name="events" from="${org.ughub.Event.list()}" multiple="multiple" optionKey="id" size="5" required="" value="${groupInstance?.events*.id}" class="many-to-many"/>
+</div>
+
 <div class="fieldcontain ${hasErrors(bean: groupInstance, field: 'logoPath', 'error')} ">
 	<label for="logoPath">
 		<g:message code="group.logoPath.label" default="Logo Path" />
