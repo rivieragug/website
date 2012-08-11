@@ -7,13 +7,21 @@ class Post {
     String title
     String postContent
     Member author
-    Group groupOwner
+	Blog referenceBlog
+	Date postDate = new Date()
+	Date lastUpdateDate = new Date()
 	
+		
     static hasMany = [comments: PostComment]
 
     static constraints = {
         title()
-    	groupOwner(nullable:true)
+		author()
+		postContent()
+    	referenceBlog(nullable:true)
+		postDate()
+		lastUpdateDate()
+		comments()
     }
 
     String toString() { title }

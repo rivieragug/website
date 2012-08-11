@@ -19,6 +19,7 @@
     </style>
     <link href="assets/css/bootstrap-responsive.min.css" rel="stylesheet">
     <link href="assets/css/application.css" rel="stylesheet">
+    <link href="assets/css/skin.css" rel="stylesheet"/>
 
     <!--[if lt IE 9]>
       <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
@@ -106,7 +107,12 @@
               <div class="span8">
                 <h2>Welcome to Riviera Groovy &amp; Grails Users Group!</h2>
                 <br/>
-                <p><img src="assets/img/slider-image1.png"/></p>
+                <ul id="slider" class="jcarousel-skin-tango">
+                   <li><img src="assets/img/slider-image1.png"/></li>
+                   <li><img src="assets/img/slider-image2.png"/></li>
+                   <li><img src="assets/img/slider-image3.png"/></li>
+                   <li><img src="assets/img/slider-image4.png"/></li>
+                </ul>
                 <!--p><a class="btn btn-info" href="#">Details &raquo;</a></p-->
               </div>
 
@@ -165,6 +171,15 @@
 
     <script src="assets/js/jquery.js"></script>
     <script src="assets/js/bootstrap.min.js"></script>
+    <script src="assets/js/jquery.jcarousel.min.js"></script>
+
+    <script type="text/javascript">
+      jQuery(document).ready(function() {
+        jQuery('#slider').jcarousel({
+          visible: 1
+        });
+    });
+    </script>
 
   </body>
 </html>
