@@ -17,10 +17,24 @@ class BootStrap {
 				).save(failOnError: true)
 	        }
     		setUpUsers()
+			setUpSponsors()
 //		}
 		
 		
     }
+	
+	def setUpSponsors = {
+		if(!Sponsor.count()) {
+			def logo = new File('testdata', 'logo.jpeg').bytes
+			def img = new Image(data: logo, mimetype: 'image/jpeg').save(failOnError: true)
+			new Sponsor(companyName:"SOPRA", 
+				        description:"SSII intersted in J2EE based technologies", 
+						logoPath:"/tmp", 
+						minilogo:logo).save(failOnError: true)
+		
+		}
+	}
+	
 	
 	/**
 	 * Creates the admin user, the roles and assigns them
