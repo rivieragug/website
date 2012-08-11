@@ -87,9 +87,9 @@
 			</div>
 			   <div class="sponsors">
                  <div class="row-fluid">
-				   <g:img dir="draft/assets/img/" file="logo-sopra.png"/>
-				   <g:img dir="draft/assets/img/" file="logo-avisto.png"/>
-				   <g:img dir="draft/assets/img/" file="logo-les-satellites.png"/>
+				   <g:img dir="img/" file="logo-sopra.png"/>
+				   <g:img dir="img/" file="logo-avisto.png"/>
+				   <g:img dir="img/" file="logo-les-satellites.png"/>
                  </div>
                </div>
 		</div>

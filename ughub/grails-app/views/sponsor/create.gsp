@@ -1,4 +1,5 @@
 <%@ page import="org.ughub.Sponsor" %>
+<%@ page import="org.ughub.Group" %>
 <!doctype html>
 <html>
 	<head>
@@ -10,7 +11,6 @@
 		<div class="row-fluid">
 			
 			<div class="span2 well sidebar-nav">
-				<div class="well">
 					<ul class="nav nav-list">
 						<li class="nav-header">${entityName}</li>
 						<li>
@@ -26,7 +26,6 @@
 							</g:link>
 						</li>
 					</ul>
-				</div>
 			</div>
 			
 			<div class="span8 content">
@@ -52,8 +51,24 @@
 				<fieldset>
 					<g:form class="form-horizontal" action="create" >
 						<fieldset>
-							<f:all bean="sponsorInstance"/>
-						<g:textField name="comauto" style="width: 300px;"> </g:textField>
+							<!--f:all bean="sponsorInstance"/-->
+					      	<ug:formcontrol label='Your organization'>
+					          <g:textField name="companyName" value="${sponsorInstance.companyName}"/>
+					        </ug:formcontrol>
+					        <ug:formcontrol label='Tell us about you'>
+					          <g:textArea name="description" value="${sponsorInstance.description}"/>
+					        </ug:formcontrol>
+					        <ug:formcontrol label='Your website'>
+					          <g:textField type="url" name="website" value="${sponsorInstance.website}"/>
+					        </ug:formcontrol>      
+					        <ug:formcontrol label='Which groups are you interested in'>
+							<g:select name="group.id"
+					          from="${Group.list()}"
+					          value=""
+					          optionKey="name" />
+					        </ug:formcontrol> 
+					          
+						    <g:textField name="comauto" style="width: 300px;"> </g:textField>
 						
 							<div class="form-actions">
 								<button type="submit" class="btn btn-primary">
