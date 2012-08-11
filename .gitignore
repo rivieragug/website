@@ -7,9 +7,12 @@ stacktrace.log
 target
 /plugins
 /ughub/web-app/plugins
-/ughub/web-app/WEB-INF/classes
+/ughub/web-app/WEB-INF/
 .class
 /ughub/target-eclipse
 .classpath
 .project
 caldecott.log
+application.properties
+.metadata
+Servers/
