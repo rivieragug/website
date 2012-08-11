@@ -48,7 +48,7 @@
 						
 							<g:sortableColumn property="description" title="${message(code: 'sponsor.description.label', default: 'Description')}" />
 						
-							<g:sortableColumn property="logo" title="${message(code: 'sponsor.logo.label', default: 'Logo')}" />
+							<th class="header"><g:message code="sponsor.minilogo.label" default="Minilogo" /></th>
 						
 							<g:sortableColumn property="website" title="${message(code: 'sponsor.website.label', default: 'Website')}" />
 						
@@ -63,7 +63,7 @@
 						
 							<td>${fieldValue(bean: sponsorInstance, field: "description")}</td>
 						
-							<td>${fieldValue(bean: sponsorInstance, field: "logo")}</td>
+							<td>${fieldValue(bean: sponsorInstance, field: "minilogo")}</td>
 						
 							<td>${fieldValue(bean: sponsorInstance, field: "website")}</td>
 						
