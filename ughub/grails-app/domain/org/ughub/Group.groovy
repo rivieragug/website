@@ -1,6 +1,9 @@
 package org.ughub
 
+import java.util.Set;
+
 class Group {
+	Set tags
 	String name
 	String description
 	Image minilogo
