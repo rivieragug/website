@@ -3,10 +3,11 @@ package org.ughub
 class PostComment {
 	
 	String comment
-	Post referencedPost
+	//Post referencedPost
 	Member author
 	Date commentDate = new Date()
 	
+	static belongsTo = [referencedPost: Post]
     static constraints = {
 		referencedPost()
 		author()

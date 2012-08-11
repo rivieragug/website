@@ -9,8 +9,6 @@ class PostCommentController {
 	}
 	
 	def save() {
-		println params
-		
 		PostComment comment = new PostComment()
 		String commentContent = params['comment']
 		comment.setComment(commentContent)
