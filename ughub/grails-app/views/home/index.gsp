@@ -15,6 +15,9 @@
 				<g:link class='btn btn-large btn-primary' controller="group" action="create">
 					Create My Group Now !
 				</g:link> 
+				<g:link class='btn btn-large btn-primary' controller="sponsor" action="create">
+					Become a SponsorNow!
+				</g:link> 
 			</sec:ifLoggedIn>
     	</div>
 
