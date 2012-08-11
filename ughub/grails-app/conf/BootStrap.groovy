@@ -3,7 +3,8 @@ import org.ughub.*
 import grails.util.Environment
 
 class BootStrap {
-
+def grailsApplication
+def tagService
     def init = { servletContext ->
 //    	if (Environment.current == Environment.DEVELOPMENT){
     		if (!Group.count()) {
@@ -18,9 +19,11 @@ class BootStrap {
 	        }
     		setUpUsers()
 //		}
-		
-		
-    }
+			addTagsToDomainClasses()
+			
+			}
+			
+    
 	
 	/**
 	 * Creates the admin user, the roles and assigns them
@@ -47,6 +50,22 @@ class BootStrap {
 			}
 		}
 	}
+	
+	/**
+	 * Adds the addTag method to the concerned domain classes
+	 */
+	def addTagsToDomainClasses(){
+		def domain = ["Blog","Event","Group","Member","Sponsor"]
+		grailsApplication.domainClasses.each{
+			
+			
+			it.metaClass.addTag = {tag->
+				delegate.addToTags(tag)
+				tagService.addTag(tag)
+				}
+			
+		}
+		}
 	
     def destroy = {
     }
