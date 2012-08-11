@@ -6,7 +6,7 @@
     <div class="well">
       <h1>Register</h1>
       <g:message code="${flash.message}"/>
-      <g:form  class="form-horizontal" name="memberCreation" url="[action:'save',controller:'member']"> 
+      <g:form  class="form-horizontal" name="userCreation" url="[action:'save',controller:'user']"> 
       	<ug:formcontrol label='User Name'>
           <g:textField name="username" value="${username}"/>
         </ug:formcontrol>

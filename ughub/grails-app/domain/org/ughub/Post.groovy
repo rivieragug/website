@@ -6,7 +6,7 @@ class Post {
 	Set tags
     String title
     String postContent
-    Member author
+    User author
 	Blog referenceBlog
 	Date postDate = new Date()
 	Date lastUpdateDate = new Date()

@@ -3,7 +3,7 @@ package org.ughub
 class PostController {
     def scaffold = true 
 	
-	def memberService
+	def userService
 	
 	def create() {
 		render(view:'create',model:params)
@@ -24,7 +24,7 @@ class PostController {
 		
 		Blog refBlog = Blog.findById(params['blog.id'])
 		post.setReferenceBlog(refBlog)
-		post.setAuthor(memberService.currentMember)
+		post.setAuthor(userService.currentUser)
 		post.setPostDate(new Date())
 		post.setLastUpdateDate(new Date())
 		
@@ -42,7 +42,7 @@ class PostController {
 		def postId = params['id']
 		Post post = Post.findById(postId)
 
-		if (post.author != memberService.currentMember) {
+		if (post.author != userService.currentUser) {
 			flash.message='Only author can update his post'
 			redirect(controller:'post', action:'show')
 		} else {

@@ -4,7 +4,7 @@ class PostComment {
 	
 	String comment
 	//Post referencedPost
-	Member author
+	User author
 	Date commentDate = new Date()
 	
 	static belongsTo = [referencedPost: Post]

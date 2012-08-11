@@ -56,15 +56,17 @@ def tagService
 	def setUpUsers = {
 		def adminUser = User.findByUsername('admin')
 		if (adminUser == null){
-			adminUser = new User(username: 'admin', password: 'admin',enabled: true).save(failOnError: true)
-			def adminMember = new Member(firstName: 'admin', lastName: 'admin')
-			adminMember.user = adminUser
-			adminMember.save(failOnError: true)
-			
+			adminUser = new User(
+				username: 'admin',
+				password: 'admin',
+				firstName: 'admin',
+				lastName: 'admin',
+				enabled: true
+			).save(failOnError: true)			
 		}
 		
 		
-		//admin member
+		//admin user
 		
 		
 		for (r in ['ROLE_ADMIN','ROLE_BASE','ROLE_POWER']) {
@@ -80,7 +82,7 @@ def tagService
 	 * Adds the addTag method to the concerned domain classes
 	 */
 	def addTagsToDomainClasses(){
-		def domain = ["Blog","Event","Group","Member","Sponsor"]
+		def domain = ["Blog","Event","Group","User","Sponsor"]
 		grailsApplication.domainClasses.each{
 			
 			

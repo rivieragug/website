@@ -8,7 +8,7 @@ class Group {
 	String description
 	Image minilogo
 	
-	static hasMany = [members: Member, events: Event, sponsors: Sponsor]
+	static hasMany = [users: User, events: Event, sponsors: Sponsor]
 	static constraints = {
 		name()		
 	}

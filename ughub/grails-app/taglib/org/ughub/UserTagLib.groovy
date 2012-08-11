@@ -1,19 +1,19 @@
 package org.ughub
 
-class MemberTagLib {
+class UserTagLib {
 	static namespace = "ug"
 
-	def memberService
+	def userService
 
 	/**
-     * Displays a current member property
+     * Displays a current user property
 	 *
 	 *  @attr prop REQUIRED property to display 
      */
-	def currentMember = { attrs ->
-		def member = memberService.currentMember
+	def currentUser = { attrs ->
+		def user = userService.currentUser
 
-		def propVal = (member."${attrs.prop}")?.toString()
+		def propVal = (user."${attrs.prop}")?.toString()
 
 		out << propVal
 	}
@@ -31,7 +31,7 @@ class MemberTagLib {
 	}
 
 	private def isOwner(attrs) {
-			def member = memberService.currentMember
-			(member && attrs?.memberId == member.id) 
+			def user = userService.currentUser
+			(user && attrs?.userId == user.id) 
 	}
 }

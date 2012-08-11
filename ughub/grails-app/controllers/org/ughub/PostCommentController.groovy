@@ -2,7 +2,7 @@ package org.ughub
 
 class PostCommentController {
     def scaffold = true
-	def memberService
+	def userService
 	
 	def create() {
 		render(view:'create',model:params)
@@ -14,7 +14,7 @@ class PostCommentController {
 		comment.setComment(commentContent)
 		Post refPost = Post.findById(params['post.id'])
 		comment.setReferencedPost(refPost)
-		comment.setAuthor(memberService.currentMember)
+		comment.setAuthor(userService.currentUser)
 		comment.setCommentDate(new Date()) 
 		if (!comment.save()) {
     		flash.put('comment', commentContent)

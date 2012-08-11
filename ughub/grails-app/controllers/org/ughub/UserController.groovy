@@ -6,9 +6,9 @@ import org.springframework.security.core.authority.AuthorityUtils;
 import org.codehaus.groovy.grails.plugins.springsecurity.SpringSecurityUtils
 import org.codehaus.groovy.grails.plugins.springsecurity.openid.OpenIdAuthenticationFailureHandler as OIAFH
 
-class MemberController {
+class UserController {
     def scaffold = true
-		def memberService
+		def userService
 
     def index() {
 
@@ -16,21 +16,21 @@ class MemberController {
 
   def show() {
 
-		def member
+		def user
   	// Looking at someone's profile
   	if (params.id) {
-  		member = memberService.getMemberById(params.id as Integer)
+  		user = userService.getUserById(params.id as Integer)
   	}
   	// My current user's profile
   	else {
-			member = memberService.currentMember
+			user = userService.currentUser
   	}
 
-		// Not a logged in member? redirect to members list
-  	if ( !member ) {
+		// Not a logged in user? redirect to users list
+  	if ( !user ) {
   		redirect(action:"list")
   	}
-  	[memberInstance: member]
+  	[userInstance: user]
   }
 
 	/**
@@ -40,7 +40,7 @@ class MemberController {
 	def save() {
 		def username = params['username']
 		def us = new User(params)
-		def m = new Member(params)
+		def m = new User(params)
 		m.user = us
 		def u = User.findByUsername(username)
 		if (u == null){
@@ -62,7 +62,7 @@ class MemberController {
 			
 			redirect(controller : 'home')	
 		}else {
-			flash.put('member', m)
+			flash.put('user', m)
 			flash.message='Username ' + username + ' already present'
 			redirect(action : 'create')
 		}
