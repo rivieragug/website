@@ -22,7 +22,7 @@ body {
 }
 </style>
 <link href="../draft/assets/css/application.css" rel="stylesheet">
-
+<link href="../../draft/assets/css/application.css" rel="stylesheet">
 <r:require modules="bootstrap" />
 <g:layoutHead />
 <r:layoutResources />
