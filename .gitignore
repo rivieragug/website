@@ -9,6 +9,6 @@ target
 /ughub/web-app/plugins
 /ughub/web-app/WEB-INF/classes
 .class
-target-eclipse
+/ughub/target-eclipse
 .classpath
 .project
