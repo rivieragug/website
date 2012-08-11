@@ -43,6 +43,11 @@ class OpenIdController {
 			return
 		}
 
+		def url = "${request.contextPath}$openIDAuthenticationFilter.filterProcessesUrl"
+		def identifier = config.openid.claimedIdentityFieldName
+		
+		//redirect(url: url, params : [identifier: identifier])
+		
 		[openIdPostUrl: "${request.contextPath}$openIDAuthenticationFilter.filterProcessesUrl",
 		 daoPostUrl:    "${request.contextPath}${config.apf.filterProcessesUrl}",
 		 persistentRememberMe: config.rememberMe.persistent,

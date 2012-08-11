@@ -104,6 +104,11 @@ grails.plugins.springsecurity.authority.className = 'org.ughub.Authority'
 grails.plugins.springsecurity.requestMap.className = 'org.ughub.Requestmap'
 grails.plugins.springsecurity.securityConfigType = "InterceptUrlMap"
 
+grails.plugins.springsecurity.openid.domainClass = 'org.ughub.OpenID'
+//google OpenId id
+grails.plugins.springsecurity.openid.claimedIdentityFieldName = 'https://www.google.com/accounts/o8/id'
+
+
 grails.plugins.springsecurity.interceptUrlMap = [
 	'/home/**':       ['IS_AUTHENTICATED_ANONYMOUSLY'],
   '/login/**':      ['IS_AUTHENTICATED_ANONYMOUSLY'],
@@ -112,4 +117,3 @@ grails.plugins.springsecurity.interceptUrlMap = [
 	'/**':            ['ROLE_BASE','IS_AUTHENTICATED_FULLY']
  ]
 
-grails.plugins.springsecurity.openid.domainClass = 'org.ughub.OpenID'
