@@ -14,6 +14,7 @@ class UrlMappings {
 			}
 		}
 
+		'/index-dev'(view:'/index-dev')
 		"/"(controller:"home", action: 'index')
 		"500"(view:'/error')
 	}
