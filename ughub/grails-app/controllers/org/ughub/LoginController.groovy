@@ -12,9 +12,17 @@ import org.springframework.security.authentication.LockedException
 import org.springframework.security.core.context.SecurityContextHolder as SCH
 import org.springframework.security.web.WebAttributes
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter
+import org.codehaus.groovy.grails.plugins.springsecurity.SpringSecurityUtils
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken
+import org.springframework.security.core.AuthenticationException
+import org.springframework.security.web.savedrequest.DefaultSavedRequest
+
 
 class LoginController {
 
+	/** Dependency injection for OpenIDAuthenticationFilter. */
+	def openIDAuthenticationFilter
+	
 	/**
 	 * Dependency injection for the authenticationTrustResolver.
 	 */
@@ -33,7 +41,7 @@ class LoginController {
 			redirect uri: SpringSecurityUtils.securityConfig.successHandler.defaultTargetUrl
 		}
 		else {
-			redirect action: 'auth', params: params
+			redirect action: 'auth2', params: params
 		}
 	}
 
@@ -50,9 +58,10 @@ class LoginController {
 		}
 
 		String view = 'auth'
-		String postUrl = "${request.contextPath}${config.apf.filterProcessesUrl}"
-		render view: view, model: [postUrl: postUrl,
-		                           rememberMeParameter: config.rememberMe.parameter]
+		render view: view, model: [rememberMeParameter: config.rememberMe.parameter,
+								   openidIdentifier: config.openid.claimedIdentityFieldName,
+								   openIdPostUrl: "${request.contextPath}$openIDAuthenticationFilter.filterProcessesUrl",
+								   daoPostUrl:    "${request.contextPath}${config.apf.filterProcessesUrl}"]
 	}
 
 	/**
