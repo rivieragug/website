@@ -1,6 +1,9 @@
 package org.ughub
 
+import java.util.Set;
+
 class Member {
+	Set tags
 	String firstName
 	String lastName
 	User   user

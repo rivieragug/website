@@ -1,6 +1,9 @@
 package org.ughub
 
+import java.util.Set;
+
 class Sponsor {
+	Set tags
 	String companyName
 	String description
 	URL website
