@@ -10,7 +10,14 @@ class PostController {
 	}
 
 	def update() {
-		render(view:'update',model:params)
+		def postId = params['id']
+		Post p = Post.findById(postId)
+		println ".... $p ..."
+		if (p!= null) {		
+			render(view:'update',model:[postInstance:p,id:postId])
+		} else {
+			redirect(controller:'post', action:'show')
+		}
 	}
 
 	def save() {
