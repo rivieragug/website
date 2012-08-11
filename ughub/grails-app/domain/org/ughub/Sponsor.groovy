@@ -10,4 +10,6 @@ class Sponsor {
 	
     static constraints = {
     }
+	
+
 }

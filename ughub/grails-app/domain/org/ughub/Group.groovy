@@ -7,7 +7,7 @@ class Group {
 	static hasMany = [members: Member, events: Event, sponsors: Sponsor]
 	static constraints = {
 	}
-
+    String toString() {name}
 	static mapping = {
         collection "ugroup"
 		//sponsors(nullable:true)
