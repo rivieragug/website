@@ -1,11 +1,11 @@
 body {
-  background: url("../img/bg-main.png") repeat-x scroll 0 0 white;
+  background: url("../images/bg-main.png") repeat-x scroll 0 0 white;
   color: #555555;
   font-size: 14px;
 }
 
 .content {
-  background: #FCFCF9 url("../img/bg-content.png") repeat;
+  background: #FCFCF9 url("../images/bg-content.png") repeat;
   padding: 15px 30px;
 
   -webkit-border-radius: 20px;
