@@ -20,10 +20,18 @@ class MemberTagLib {
 
 	def isProfileOwner = { attrs, body ->
 
-			def member = memberService.currentMember
-			if (member && attrs?.memberId == member.id) {
+			if (isOwner(attrs)) {
 				out << body()
 			}
+	}
+	def isNotProfileOwner = { attrs, body ->
+			if (!isOwner(attrs)) {
+				out << body()
+			}
+	}
 
+	private def isOwner(attrs) {
+			def member = memberService.currentMember
+			(member && attrs?.memberId == member.id) 
 	}
 }

@@ -5,7 +5,8 @@
 	<head>
 		<meta name="layout" content="ughub-main">
 		<g:set var="entityName" value="${message(code: 'member.label', default: 'Member')}" />
-		<title><g:message code="default.show.label" args="[entityName]" /></title>
+		<title><g:fieldValue bean="${memberInstance}" field="firstName"/> 
+            <g:fieldValue bean="${memberInstance}" field="lastName"/></title>
 	</head>
 	<body>
 		<div class="row-fluid">
@@ -46,21 +47,30 @@
 
 				<dl>
 				
+          <g:if test="${memberInstance?.user?.username}">
+            <dt><g:message code="member.user.username.label" default="Username" /></dt>
+              <dd><g:fieldValue bean="${memberInstance.user}" field="username"/></dd>
+          </g:if>
+        
+          <dt><g:message code="member.groups.label" default="Groups" /></dt>
 					<g:if test="${memberInstance?.groups}">
-						<dt><g:message code="member.groups.label" default="Groups" /></dt>
-						
 							<g:each in="${memberInstance.groups}" var="g">
-							<dd><g:link controller="group" action="show" id="${g.id}">${g?.encodeAsHTML()}</g:link></dd>
-							</g:each>
-						
+							<dd>
+                <g:link controller="group" action="show" id="${g.id}">${g?.encodeAsHTML()}</g:link>
+              </dd>
+							</g:each>	
 					</g:if>
-				
-					<g:if test="${memberInstance?.user?.username}">
-						<dt><g:message code="member.user.username.label" default="Username" /></dt>
-						
-							<dd><g:fieldValue bean="${memberInstance.user}" field="username"/></dd>
-						
-					</g:if>
+          <g:else>
+            <dd>
+              <g:message code="member.no-groups.label" default="You don't belong to any group" />
+            </dd>
+            <dd>
+              <g:link class="btn btn-primary" controller="group" action="list">
+                <i class="icon-chevron-right icon-white"></i>
+                <g:message code="default.button.find-group.label" default="Go find one!" />
+              </g:link>
+            </dd>
+          </g:else>
 				
 				</dl>
 
@@ -70,12 +80,8 @@
   					<div class="form-actions">
   						<g:link class="btn" action="edit" id="${memberInstance?.id}">
   							<i class="icon-pencil"></i>
-  							<g:message code="default.button.edit.label" default="Edit" />
+  							<g:message code="default.button.edit-profile.label" default="Edit Your profile" />
   						</g:link>
-  						<button class="btn btn-danger" type="submit" name="_action_delete">
-  							<i class="icon-trash icon-white"></i>
-  							<g:message code="default.button.delete.label" default="Delete" />
-  						</button>
   					</div>
   				</g:form>
         </ug:isProfileOwner>

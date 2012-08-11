@@ -14,7 +14,6 @@ class MemberService {
     }
 
     Member getMemberById(int memberId) {
-
       Member.findById(memberId)
     }
 }
