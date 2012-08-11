@@ -18,8 +18,8 @@ class GroupController {
     		return
     	}
 
-    	response.contentType = "image/jpeg"
-    	response.outputStream << group.minilogo  	
+    	response.contentType = group.minilogo.mimeType
+    	response.outputStream << group.minilogo.data
     }
 
 }

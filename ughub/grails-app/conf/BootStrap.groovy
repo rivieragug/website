@@ -8,12 +8,13 @@ class BootStrap {
 //    	if (Environment.current == Environment.DEVELOPMENT){
     		if (!Group.count()) {
     			def logo = new File('testdata', 'logo.jpeg').bytes
+    			def img = new Image(data: logo, mimetype: 'image/jpeg').save(failOnError: true)
 				new Group(
 					name: "Coding Week-End Group",
 					description: "Pizzas & Beers are legions",
 					logoPath: "/tmp",
-					minilogo: logo)
-				.save(failOnError: true)
+					minilogo: img
+				).save(failOnError: true)
 	        }
     		setUpUsers()
 //		}
