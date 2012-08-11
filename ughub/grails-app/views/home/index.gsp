@@ -16,7 +16,7 @@
 					Create My Group Now !
 				</g:link> 
 				<g:link class='btn btn-large btn-primary' controller="sponsor" action="create">
-					Become a SponsorNow!
+					Become a Sponsor Now !
 				</g:link> 
 			</sec:ifLoggedIn>
     	</div>
