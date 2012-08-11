@@ -17,4 +17,13 @@ class MemberTagLib {
 
 		out << propVal
 	}
+
+	def isProfileOwner = { attrs, body ->
+
+			def member = memberService.currentMember
+			if (member && attrs?.memberId == member.id) {
+				out << body()
+			}
+
+	}
 }

@@ -8,11 +8,30 @@ import org.codehaus.groovy.grails.plugins.springsecurity.openid.OpenIdAuthentica
 
 class MemberController {
     def scaffold = true
-	
+		def memberService
 
     def index() {
 
     }
+
+  def show() {
+
+		def member
+  	// Looking at someone's profile
+  	if (params.id) {
+  		member = memberService.getMemberById(params.id as Integer)
+  	}
+  	// My current user's profile
+  	else {
+			member = memberService.currentMember
+  	}
+
+		// Not a logged in member? redirect to members list
+  	if ( !member ) {
+  		redirect(action:"list")
+  	}
+  	[memberInstance: member]
+  }
 
 	/**
 	 * Saves a and a profile if that username does not exist.

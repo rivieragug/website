@@ -14,6 +14,9 @@ class UrlMappings {
 			}
 		}
 
+		"/profile" 				(controller:"member", action: "show")
+		"/member/$id" 	(controller: "member", action: "show")
+
 		"/"(controller:"home", action: 'index')
 		"500"(view:'/error')
 	}
