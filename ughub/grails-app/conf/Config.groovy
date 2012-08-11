@@ -32,8 +32,9 @@ grails.mime.types = [
 // URL Mapping Cache Max Size, defaults to 5000
 //grails.urlmapping.cache.maxsize = 1000
 
-grails.plugin.cloudfoundry.username = 'rivieragugcoding@gmail.com'
-grails.plugin.cloudfoundry.password = 'codingweekend'
+// The 2 following settings should be defined in your ~/.grails/settings.groovy
+// grails.plugin.cloudfoundry.username
+// grails.plugin.cloudfoundry.password
 
 // What URL patterns should be processed by the resources plugin
 grails.resources.adhoc.patterns = ['/images/*', '/css/*', '/js/*', '/plugins/*']
@@ -91,6 +92,10 @@ log4j = {
            'org.springframework',
            'org.hibernate',
            'net.sf.ehcache.hibernate'
+
+    debug 'org.ughub',
+          'grails.app'
+    info  'grails.app.taglib'
 }
 
 // Added by the Spring Security Core plugin:
@@ -100,7 +105,18 @@ grails.plugins.springsecurity.authority.className = 'org.ughub.Authority'
 grails.plugins.springsecurity.requestMap.className = 'org.ughub.Requestmap'
 grails.plugins.springsecurity.securityConfigType = "InterceptUrlMap"
 
+grails.plugins.springsecurity.openid.domainClass = 'org.ughub.OpenID'
+//google OpenId id
+grails.plugins.springsecurity.openid.claimedIdentityFieldName = 'https://www.google.com/accounts/o8/id'
+
+
 grails.plugins.springsecurity.interceptUrlMap = [
-	'/home/**':      ['IS_AUTHENTICATED_ANONYMOUSLY'],
-	'/*':            ['ROLE_ADMIN','IS_AUTHENTICATED_FULLY']
+	'/home/**':         ['IS_AUTHENTICATED_ANONYMOUSLY'],
+  '/login/**':        ['IS_AUTHENTICATED_ANONYMOUSLY'],
+  '/member/create':   ['IS_AUTHENTICATED_ANONYMOUSLY'],
+  '/member/save':     ['IS_AUTHENTICATED_ANONYMOUSLY'],
+  '/group/listShort': ['IS_AUTHENTICATED_ANONYMOUSLY'],
+  '/image/show/*':      ['IS_AUTHENTICATED_ANONYMOUSLY'],
+	'/**':              ['ROLE_BASE','IS_AUTHENTICATED_FULLY']
  ]
+

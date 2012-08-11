@@ -31,6 +31,7 @@ grails.project.dependency.resolution = {
         //mavenRepo "http://download.java.net/maven/2/"
         //mavenRepo "http://repository.jboss.com/maven2/"
 	mavenRepo "http://maven.springframework.org/milestone/"
+	mavenRepo "http://guice-maven.googlecode.com/svn/trunk/"
     }
     dependencies {
         // specify dependencies here under either 'build', 'compile', 'runtime', 'test' or 'provided' scopes eg.
@@ -43,7 +44,7 @@ grails.project.dependency.resolution = {
         runtime ":jquery:1.7.2"
         runtime ":resources:1.1.6"
         runtime ":twitter-bootstrap:2.0.1.22"
-		
+		runtime ":fields:1.1"
 		//compile ":searchable:0.6.3"
 		compile ":taggable:1.0.1"
 		compile ":tagcloud:0.3"
@@ -60,5 +61,7 @@ grails.project.dependency.resolution = {
         compile ':cache:1.0.0'
 		compile ":spring-security-core:1.2.7.3"
 		compile ":cloud-foundry:1.2.3"
+		compile ":spring-security-openid:1.0.4"
+		
     }
 }

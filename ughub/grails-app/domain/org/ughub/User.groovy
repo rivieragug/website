@@ -11,9 +11,11 @@ class User {
 	boolean accountLocked
 	boolean passwordExpired
 
+	static hasMany = [openIds: OpenID]
+	
 	static constraints = {
 		username blank: false, unique: true
-		password blank: false
+		password blank: true, nullable: true
 	}
 
 	static mapping = {
@@ -29,12 +31,14 @@ class User {
 	}
 
 	def beforeUpdate() {
-		if (isDirty('password')) {
-			encodePassword()
-		}
+		//encodePassword()
 	}
 
 	protected void encodePassword() {
 		password = springSecurityService.encodePassword(password)
+	}
+
+	String toString() {
+		username
 	}
 }

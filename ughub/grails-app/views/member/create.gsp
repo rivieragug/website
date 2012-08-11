@@ -1,39 +1,30 @@
-<%@ page import="org.ughub.Member" %>
-<!doctype html>
 <html>
-	<head>
-		<meta name="layout" content="main">
-		<g:set var="entityName" value="${message(code: 'member.label', default: 'Member')}" />
-		<title><g:message code="default.create.label" args="[entityName]" /></title>
-	</head>
-	<body>
-		<a href="#create-member" class="skip" tabindex="-1"><g:message code="default.link.skip.label" default="Skip to content&hellip;"/></a>
-		<div class="nav" role="navigation">
-			<ul>
-				<li><a class="home" href="${createLink(uri: '/')}"><g:message code="default.home.label"/></a></li>
-				<li><g:link class="list" action="list"><g:message code="default.list.label" args="[entityName]" /></g:link></li>
-			</ul>
-		</div>
-		<div id="create-member" class="content scaffold-create" role="main">
-			<h1><g:message code="default.create.label" args="[entityName]" /></h1>
-			<g:if test="${flash.message}">
-			<div class="message" role="status">${flash.message}</div>
-			</g:if>
-			<g:hasErrors bean="${memberInstance}">
-			<ul class="errors" role="alert">
-				<g:eachError bean="${memberInstance}" var="error">
-				<li <g:if test="${error in org.springframework.validation.FieldError}">data-field-id="${error.field}"</g:if>><g:message error="${error}"/></li>
-				</g:eachError>
-			</ul>
-			</g:hasErrors>
-			<g:form action="save" >
-				<fieldset class="form">
-					<g:render template="form"/>
-				</fieldset>
-				<fieldset class="buttons">
-					<g:submitButton name="create" class="save" value="${message(code: 'default.button.create.label', default: 'Create')}" />
-				</fieldset>
-			</g:form>
-		</div>
-	</body>
+<head>
+  <meta name="layout" content="ughub-main"/>
+</head>
+<body>
+    <div class="well">
+      <h1>Register</h1>
+      <g:message code="${flash.message}"/>
+      <g:form  class="form-horizontal" name="memberCreation" url="[action:'save',controller:'member']"> 
+      	<ug:formcontrol label='User Name'>
+          <g:textField name="username" value="${username}"/>
+        </ug:formcontrol>
+      	<ug:formcontrol label='Name'>
+          <g:textField name="firstName"/>
+        </ug:formcontrol>
+      	<ug:formcontrol label='Last Name'>
+          <g:textField name="lastName"/>
+        </ug:formcontrol>
+      	<ug:formcontrol label='Password'>
+          <g:passwordField name="password"/>
+        </ug:formcontrol>
+
+        <div class="form-actions">
+      	  <g:submitButton class="btn btn-primary" name="create" value="Register" />
+        </div>
+
+      </g:form>
+    </div>
+</body>
 </html>
