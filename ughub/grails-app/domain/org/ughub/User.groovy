@@ -29,9 +29,7 @@ class User {
 	}
 
 	def beforeUpdate() {
-		if (isDirty('password')) {
-			encodePassword()
-		}
+		//encodePassword()
 	}
 
 	protected void encodePassword() {
