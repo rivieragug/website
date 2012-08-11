@@ -104,3 +104,5 @@ grails.plugins.springsecurity.interceptUrlMap = [
 	'/home/**':      ['IS_AUTHENTICATED_ANONYMOUSLY'],
 	'/*':            ['ROLE_BASE','IS_AUTHENTICATED_FULLY']
  ]
+
+grails.plugins.springsecurity.openid.domainClass = 'org.ughub.OpenID'
