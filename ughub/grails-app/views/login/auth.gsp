@@ -109,6 +109,7 @@
 				<label for='remember_me'><g:message code="springSecurity.login.remember.me.label"/></label>
 			</p>
 
+			<p><g:link controller="member" action="create">Register</g:link></p>
 			<p>
 				<input type='submit' id="submit" value='${message(code: "springSecurity.login.button")}'/>
 			</p>
