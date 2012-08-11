@@ -9,9 +9,11 @@ class Sponsor {
 	static belongsTo = Group
 	
     static constraints = {
+	  companyName()
+	  description()
+	  website()
 	  minilogo(nullable:true)	
     }
 
     String toString() { companyName }
-
 }
