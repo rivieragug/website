@@ -32,7 +32,7 @@ def tagService
 				}
 			}
     		setUpUsers()
-			//setUpSponsors()
+			setUpSponsors()
 //		}
 			addTagsToDomainClasses()
 			
