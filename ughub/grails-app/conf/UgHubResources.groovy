@@ -1,7 +1,8 @@
 modules = {
 	core {
 		defaultBundle 'ui'
-		resource url:'/assets/css/application.css' 
+		resource url:'/css/application.css' 
+		resource url:'/js/application.js' 
 	}
 	utils { 
 	}

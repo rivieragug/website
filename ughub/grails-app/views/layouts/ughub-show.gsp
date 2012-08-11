@@ -39,7 +39,7 @@ body {
 					<a class="brand" href="#">Riviera GUG</a>
 					<div class="btn-group pull-right">
 						<a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
-							<i class="icon-user"></i>&nbsp;<ug:currentMember prop="user" /> 
+							<i class="icon-user"></i>&nbsp;<a href="${g.createLink(controller: "member", action:"show")}"><ug:currentMember prop="firstName"/> <ug:currentMember prop="lastName"/></a> 
 							<span class="caret"></span>
 						</a>
 						<ul class="dropdown-menu">
