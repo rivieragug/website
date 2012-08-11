@@ -12,4 +12,8 @@ class MemberService {
    		log.debug member
    		member
     }
+
+    Member getMemberById(int memberId) {
+      Member.findById(memberId)
+    }
 }
