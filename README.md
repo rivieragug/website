@@ -290,3 +290,5 @@ See You on Friday
 
 For those who won't have time to do their homework, downloaded version will be available and we can grant github repository access on Friday.
 See you on Friday.
+
+[Links](http://minutes.mais-h.eu:9001/p/Landing_page) to the collaborative minutes (not public). New pages can be created, but reference them from the landing page.
