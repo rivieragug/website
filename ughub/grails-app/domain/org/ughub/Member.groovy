@@ -3,7 +3,7 @@ package org.ughub
 class Member {
 	String firstName
 	String lastName
-	static hasOne = [user: User]
+	User   user
 	static belongsTo = Group
 	static hasMany = [groups:Group]
 	static constraints = {

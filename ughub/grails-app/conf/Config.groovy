@@ -91,6 +91,10 @@ log4j = {
            'org.springframework',
            'org.hibernate',
            'net.sf.ehcache.hibernate'
+
+    debug 'org.ughub',
+          'grails.app'
+    info  'grails.app.taglib'
 }
 
 // Added by the Spring Security Core plugin:
@@ -101,8 +105,11 @@ grails.plugins.springsecurity.requestMap.className = 'org.ughub.Requestmap'
 grails.plugins.springsecurity.securityConfigType = "InterceptUrlMap"
 
 grails.plugins.springsecurity.interceptUrlMap = [
-	'/home/**':      ['IS_AUTHENTICATED_ANONYMOUSLY'],
-	'/*':            ['ROLE_BASE','IS_AUTHENTICATED_FULLY']
+	'/home/**':       ['IS_AUTHENTICATED_ANONYMOUSLY'],
+  '/login/**':      ['IS_AUTHENTICATED_ANONYMOUSLY'],
+  '/member/create': ['IS_AUTHENTICATED_ANONYMOUSLY'],
+  '/member/save':   ['IS_AUTHENTICATED_ANONYMOUSLY'],
+	'/**':            ['ROLE_BASE','IS_AUTHENTICATED_FULLY']
  ]
 
 grails.plugins.springsecurity.openid.domainClass = 'org.ughub.OpenID'
