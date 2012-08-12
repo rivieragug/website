@@ -81,7 +81,7 @@
 							<g:each in="${groupInstance.events}" var="e">
 								<dt><g:link controller="event" action="show" id="${e.id}">${e?.date?.encodeAsHTML()} - ${e?.encodeAsHTML()}</g:link></dt>
 								<dd><h4>TYPE : ${e?.type?.encodeAsHTML()}</h4></dd>
-								<dd><img src="http://localhost:8080/ughub/image/show/1" title="${s?.encodeAsHTML()}" alt="${s?.encodeAsHTML()}" class="event-image pull-left"/><div class="right-bloc">${e?.description?.encodeAsHTML()}</div></dd>
+								<dd><img src="http://placehold.it/170x170" title="${s?.encodeAsHTML()}" alt="${s?.encodeAsHTML()}" class="event-image pull-left"/><div class="right-bloc">${e?.description?.encodeAsHTML()}</div></dd>
 								<hr class="separator"/>
 							</g:each>
 
@@ -113,7 +113,7 @@
 					<g:each in="${groupInstance.users}" var="u">
 						<li class="span3">
 								<%/*<img src="${createLink(action:'show',controller:'image', id:s?.minilogo?.id)}" title="${s?.encodeAsHTML()}" alt="${s?.encodeAsHTML()}" class="pull-left"/>*/%>
-								<%/*<img src="http://localhost:8080/ughub/image/show/1" title="${s?.encodeAsHTML()}" alt="${s?.encodeAsHTML()}" class="sponsor-logo pull-left"/>*/%>
+								<img src="http://placehold.it/48x48" title="${s?.encodeAsHTML()}" alt="${s?.encodeAsHTML()}" class="sponsor-logo pull-left"/>
 								<g:link controller="user" action="show" id="${u.id}">${u?.encodeAsHTML()}</g:link>
 							
 						</li>
