@@ -63,12 +63,12 @@
 							<g:form class="pull-right">
 								<g:hiddenField name="id" value="${groupInstance?.id}" />
 								<div>
-									<g:link class="btn" action="edit" id="${groupInstance?.id}">
-										<i class="icon-pencil"></i>
+									<g:link class="btn" controller="event" action="list" id="${groupInstance?.id}">
+										<i class="icon-list"></i>
 										<g:message code="default.button.list.label" default="Lister tous les events" />
 									</g:link>
 									<button class="btn btn-success" type="submit" name="_action_delete">
-										<i class="icon-trash icon-white"></i>
+										<i class="icon-pencil icon-white"></i>
 										<g:message code="default.button.creer.label" default="Créer un event" />
 									</button>
 								</div>
