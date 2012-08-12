@@ -28,6 +28,7 @@ def tagService
 				3.times {
 					def event = new Event(
 						name: "Event ${it}", type: "Fake event", date: now + it*2,
+						organizingGroup: gug,
 						description: """
 Install procedure
 =================

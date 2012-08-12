@@ -29,8 +29,18 @@
                 <hr>
                 <markdown:renderHtml>${eventInstance.description}</markdown:renderHtml>
             </div>
-        </div>
-       
+            </div>
+            <ul class="span3 well sidebar-nav thumbnails">
+                <dt><g:message code="event.groups.label" default="Organizing Group" /></dt>
+                    <g:set value="${eventInstance.organizingGroup}" var="g"/>
+                        <li class="group-logo">
+                            <div class="thumbnail">
+                                <g:if test="${g?.minilogo}">
+                                    <g:link controller="group" action="show" id="${g.id}"><img src="${createLink(action:'show',controller:'image', id: g?.minilogo?.id)}" title="${g?.encodeAsHTML()}" alt="${g?.encodeAsHTML()}"/></g:link>
+                                </g:if>
+                            </div>
+                        </li>
+            </ul>
     </div>
 
 </body>

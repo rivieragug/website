@@ -6,12 +6,16 @@ class Event {
 	String type
 	Date   date
 	String description
-	static hasMany = [groups: Group, events: Event]
+
+	Group organizingGroup
+
 	static belongsTo = Group
     static constraints = {
 		name()
 		type()
 		date nullable: true
+		organizingGroup()
+		description()
     }
 
     String toString() { name }
