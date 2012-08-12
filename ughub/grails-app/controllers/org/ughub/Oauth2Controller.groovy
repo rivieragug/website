@@ -28,7 +28,7 @@ class Oauth2Controller {
 			def u = User.findByUsername(email)
 			if (u == null){
 				//need a registration
-				render(view : '../member/create', model : [username : email , 
+				render(view : '../user/create', model : [username : email , 
 					oauth : true, controlsDisabled:'disabled', firstName: userInfo['given_name'], lastName: userInfo['family_name']])
 			}else {
 				//need a login
