@@ -44,7 +44,7 @@ body {
               <div>
 								<sec:ifLoggedIn>
 	                <div class="btn-group">
-										<a class="btn btn-inverse dropdown-toggle nav-button" data-toggle="dropdown" href="#">
+										<a class="btn btn-info dropdown-toggle nav-button" data-toggle="dropdown" href="#">
 											<i class="icon-user icon-white"></i>&nbsp;<ug:currentUser prop="firstName"/> <ug:currentUser prop="lastName"/> 
 											<span class="caret"></span>
 										</a>
@@ -58,7 +58,7 @@ body {
 
 								<sec:ifNotLoggedIn>
 	                <div class="btn-group">
-	                    <a class="btn btn-inverse dropdown-toggle" data-toggle="dropdown" href="#">
+	                    <a class="btn btn-info dropdown-toggle" data-toggle="dropdown" href="#">
 	                        Log In / Sign Up
 	                    </a>
 			                  <ul class="dropdown-menu pull-right">
