@@ -22,6 +22,7 @@ class Oauth2Controller {
 			def code = params['code']
 			def resp = oauthService.redeemToken(code)
 			session['GOOGLE_TOKEN'] = resp['access_token']
+			flash.put('GOOGLE_AUTH', true)
 			def userInfo = oauthService.getUserInfo(resp['access_token'])
 			
 			def email = userInfo['email']

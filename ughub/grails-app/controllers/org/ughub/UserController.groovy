@@ -58,12 +58,30 @@ class UserController {
         //create
         u.enabled = true
         //openid
-        String openId = session[OIAFH.LAST_OPENID_USERNAME]
-        if (openId != null){
+        def openId = session[OIAFH.LAST_OPENID_USERNAME]
+		def isGoogleAuth = flash.get('GOOGLE_AUTH')
+		
+		if (!isGoogleAuth && openId == null){
+			if (!u.password){
+				flash.put('user', u)
+				flash.message='Empty password not allowed in password based user'
+				redirect(action : 'create')
+				return
+			}
+		}
+		
+		if (openId != null){
           u.addToOpenIds(url: openId)
-          u.password = Math.random()
+          u.password = ''
+		  u.passwordExpired = true
         }
+		
+		if (isGoogleAuth){
+			u.password = ''
+			u.passwordExpired = true
+		}
         
+		
         u.save(failOnError : true)
         
         //assign default role

@@ -11,6 +11,7 @@ class User {
 	boolean accountLocked
 	boolean passwordExpired
 
+	
 	Set tags
 	String firstName
 	String lastName

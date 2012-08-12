@@ -123,9 +123,6 @@ grails.plugins.springsecurity.interceptUrlMap = [
  ]
 
 // Add the following line into ~/.grails/ughub-config.groovy
-// org.ughub.oauth.clientsecret = '##########################'
-if (System.properties["org.ughub.oauth.clientsecret"]) {
+if (System.properties['org.ughub.oauth.clientsecret']){
 	org.ughub.oauth.clientsecret = System.properties["org.ughub.oauth.clientsecret"]
-	println System.properties["org.ughub.oauth.clientsecret"]
- }
-
+}

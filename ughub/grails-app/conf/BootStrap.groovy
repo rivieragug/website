@@ -1,11 +1,13 @@
 import org.ughub.*
 
 import grails.util.Environment
+import org.codehaus.groovy.grails.commons.ConfigurationHolder
 
 class BootStrap {
 def grailsApplication
 def tagService
     def init = { servletContext ->
+		checkOauthSecret()
 //    	if (Environment.current == Environment.DEVELOPMENT){
 			def gug = Group.findByName("Coding Week-End Group")
     		if (!gug) {
@@ -193,7 +195,20 @@ _Warning_: this install intructions is only for Ubuntu-debian based distribution
 		}
 	}
 
+	def checkOauthSecret() {
+		def config = ConfigurationHolder.config
+		def secret = config.org.ughub.oauth.clientsecret
+		if (!secret){
+			throw new OauthConfigException('Oauth client secret not configured. Thanks to set it in org.ughub.oauth.clientsecret config')
+		}
+	}
 
     def destroy = {
     }
+	
+	class OauthConfigException extends RuntimeException {
+		public OauthConfigException(String message){
+			super(message)
+		}
+	}
 }
