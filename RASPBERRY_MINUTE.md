@@ -69,6 +69,7 @@ Fil de l'eau
 ------------
 Welcome to the Riviera GUG Coding Week End!
 Useful links: 
+   
     Grails Doc: http://grails.org/doc/latest/
     Twitter Bootstrap doc: http://twitter.github.com/bootstrap/index.html
     MongoDB quick start: http://www.mongodb.org/display/DOCS/Quickstart
@@ -105,21 +106,37 @@ ughub Boostrap des données à bloc !!!
 CI is working and push automatically
 ***
 Pushed Event domain class
+***
 Pushed Blog... not sure this one is usefull for now
+***
 Added many_to_many relationship
+***
 Filipo is the only one still alive... everyone else is sleeping or living... see you tomorow!
+***
 Scaffolding is now dynamic and Bootstrap compliant.
+***
 17h00 : Pascal Revient
+***
 Reinforcements arrived !!!
+***
 Dimanche matin: 06:52 | il reste que Fred et moi, j'ai une page de profil la classe qui save. Je commit, je push, et j'me couche!!
+***
 Ouep, Homepage des groupes mise à jour, je pars pour un "git couche" :D
+***
 Oauth cliemnt secret 
+***
 c koi le nom de la properiete????
+***
 Filippo?
+***
 in ~/.grails/
+***
 add ughub-config.properties or ughub-config.groovy
+***
 add this content to the file
+***
 http://groovy.codehaus.org/groovy-jdk/ pour une doc des methodes ajoutees sur les classes du jdk
+***
 From Filippo, continuous delivery is continious outage
 
 
