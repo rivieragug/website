@@ -61,7 +61,7 @@ class UserController {
         String openId = session[OIAFH.LAST_OPENID_USERNAME]
         if (openId != null){
           u.addToOpenIds(url: openId)
-          u.password = null
+          u.password = Math.random()
         }
         
         u.save(failOnError : true)
