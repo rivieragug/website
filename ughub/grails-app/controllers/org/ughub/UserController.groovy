@@ -1,13 +1,21 @@
 package org.ughub
 
+import grails.plugins.springsecurity.SpringSecurityService;
+
 import org.springframework.dao.DataIntegrityViolationException
 import org.springframework.security.core.authority.AuthorityUtils;
+import org.springframework.security.core.authority.GrantedAuthorityImpl
 
 import org.codehaus.groovy.grails.plugins.springsecurity.SpringSecurityUtils
 import org.codehaus.groovy.grails.plugins.springsecurity.openid.OpenIdAuthenticationFailureHandler as OIAFH
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken
+import org.springframework.security.core.context.SecurityContextHolder
+
 
 class UserController {
-    def scaffold = true
+    
+	def springSecurityService
+	def scaffold = true
 		def userService
 
     def index() {
@@ -88,6 +96,9 @@ class UserController {
         def authority = Authority.findByAuthority('ROLE_BASE')
         new UserAuthority(user : u, authority : authority).save(failOnError : true)
         
+		//force authentication
+		userService.forceUserLoginWithRoles(u,[authority])
+		
         redirect(controller : 'home') 
       } else {
         flash.put('user', u)
