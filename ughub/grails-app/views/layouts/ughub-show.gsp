@@ -36,13 +36,13 @@ body {
 					<span class="icon-bar"></span> 
 					<span class="icon-bar"></span> <span class="icon-bar"></span>
 				</a>
-				<sec:ifLoggedIn>
 					<ul class="nav">
 			        	<li><g:link controller="home"><i class="icon-home icon-white"></i></g:link></li>
 			        </ul>
-					<a class="brand" href="${g.createLink(controller: "home")}">UG-hub Home!</a>
+			        <a class="brand" href="${g.createLink(controller: "home")}">UG-hub Home!</a>
+				<sec:ifLoggedIn>
 					<div class="btn-group pull-right">
-						<a class="btn dropdown-toggle" data-toggle="dropdown" href="${g.createLink(controller: "user", action:"show")}">
+						<a class="btn dropdown-toggle nav-button" data-toggle="dropdown" href="${g.createLink(controller: "user", action:"show")}" style="min:width: 200px;">
 							<i class="icon-user"></i>&nbsp;<ug:currentUser prop="firstName"/> <ug:currentUser prop="lastName"/> 
 							<span class="caret"></span>
 						</a>
@@ -54,10 +54,9 @@ body {
 					</div>
 				</sec:ifLoggedIn>
 				<sec:ifNotLoggedIn>
-					<a class="brand" href="#">Welcome</a>
 					<div class="btn-group pull-right">
 						<a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
-							<i class="icon-user"></i> <span class="caret"></span>
+							<i class="icon-user"></i>&nbsp;LOGIN<span class="caret"></span>
 						</a>
 						<ul class="dropdown-menu">
 							<li><g:link controller='user'>Login</g:link></li>
