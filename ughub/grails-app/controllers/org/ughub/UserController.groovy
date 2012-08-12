@@ -38,32 +38,45 @@ class UserController {
 	 * @return
 	 */
 	def save() {
-		def username = params['username']
-		def u = new User(params)
+    log.debug params
     
-    if (User.findByUsername(username) == null){
-      //create
-			u.enabled = true
-			//openid
-			String openId = session[OIAFH.LAST_OPENID_USERNAME]
-			if (openId != null){
-				u.addToOpenIds(url: openId)
-				u.password = null
-			}
-			
-			u.save(failOnError : true)
-			
-			//assign default role
-			def authority = Authority.findByAuthority('ROLE_BASE')
-			new UserAuthority(user : u, authority : authority).save(failOnError : true)
-			
-			redirect(controller : 'home')	
-		}else {
-			flash.put('user', u)
-			flash.message='Username ' + username + ' already present'
-			redirect(action : 'create')
-		}
-		
+    def u 
+    // Existing user
+    if (params.id) {
+      u = User.findById(params.id)
+      u.properties = params
+      u.save()
+      redirect(action:'show')
+    } 
+    // Creatign a new one
+    else {
+      
+      u = new User(params)
+      
+      def username = params['username']
+      if (User.findByUsername(username) == null) {
+        //create
+        u.enabled = true
+        //openid
+        String openId = session[OIAFH.LAST_OPENID_USERNAME]
+        if (openId != null){
+          u.addToOpenIds(url: openId)
+          u.password = null
+        }
+        
+        u.save(failOnError : true)
+        
+        //assign default role
+        def authority = Authority.findByAuthority('ROLE_BASE')
+        new UserAuthority(user : u, authority : authority).save(failOnError : true)
+        
+        redirect(controller : 'home') 
+      } else {
+        flash.put('user', u)
+        flash.message='Username ' + username + ' already present'
+        redirect(action : 'create')
+      }
+    }
 	}
 	
 	/**
