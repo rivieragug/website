@@ -11,7 +11,7 @@
           <g:textField name="j_username"/>
         </ug:formcontrol>
       	<ug:formcontrol label='Password'>
-          <g:textField name="j_password"/>
+          <g:passwordField name="j_password"/>
         </ug:formcontrol>
         <g:submitButton name="Login"/>
 		</g:form>
