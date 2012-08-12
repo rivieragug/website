@@ -55,7 +55,7 @@ body {
 				</sec:ifLoggedIn>
 				<sec:ifNotLoggedIn>
 					<div class="btn-group pull-right">
-						<a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
+						<a class="btn dropdown-toggle" data-toggle="dropdown" href="#" style="min-width: 200px;">
 							<i class="icon-user"></i>&nbsp;LOGIN<span class="caret"></span>
 						</a>
 						<ul class="dropdown-menu">
