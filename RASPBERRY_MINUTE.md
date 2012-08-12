@@ -3,23 +3,19 @@ Minute taken live in Matthieu's Raspberry
 
 Braimstorming
 ------------
-* Goals
+### Goals
 - Idée de base: faire la promotion publique des user groups et partager les dates de réunion.
 - Un outil pour les user groups de Sophia.
 - Montrer la dynamique des user groups
 - Donner l'envie aux gens de participer aux user groups
 
-* Propositions initiales?
+### Propositions initiales?
 - gestion des membres/groupes: membres basiques s'enregistrent, les admins acceptent les membres dans les groupes
 - aggrégation de différents blogs des membres
-
-    aggrégation de sources externes (type RSS)
-
-    évènements avec inscriptions
-
-    collaboration entre les user groups / croisement de resources
-
-    discussions avec fédération des différents user groups
+- aggrégation de sources externes (type RSS)
+- évènements avec inscriptions
+- collaboration entre les user groups / croisement de resources
+- discussions avec fédération des différents user groups
 
     communautés qui lancent des évènements
 
