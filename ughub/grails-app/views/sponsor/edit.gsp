@@ -10,7 +10,6 @@
 		<div class="row-fluid">
 
 			<div class="span2 well sidebar-nav">
-				<ul class="nav nav-list">
 					<ul class="nav nav-list">
 						<li class="nav-header">${entityName}</li>
 						<li>
