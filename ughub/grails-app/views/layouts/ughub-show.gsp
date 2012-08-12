@@ -72,15 +72,14 @@ body {
               </div>
             </div>
 
+            <!-- home icon -->
+						<g:link controller="home" class="brand">
+							<i class="icon-home icon-white" style="margin-top: 6px;"></i> UG-hub Home!
+						</g:link>
             <!-- nav bar buttons -->
             <div class="nav-collapse">
               <ul class="nav">
               	<li>
-			            <!-- home icon -->
-									<g:link controller="home"><i class="icon-home icon-white"></i> </g:link>
-								</li>	
-              	<li>
-									<g:link controller="home" class="brand"> UG-hub Home!</g:link>
 								</li>	
 								<li><a href="#about">About</a></li>
 								<li><a href="#contact">Contact</a></li>
