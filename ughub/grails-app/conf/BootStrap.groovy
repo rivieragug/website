@@ -118,7 +118,7 @@ _Warning_: this install intructions is only for Ubuntu-debian based distribution
 	/**
 	 * Creates the admin user, the roles and assigns them
 	 */
-	def setUpUsers = {gug->
+	def setUpUsers = { gug->
 		def adminUser = User.findByUsername('admin')
 		if (adminUser == null){
 			adminUser = new User(
@@ -159,10 +159,10 @@ _Warning_: this install intructions is only for Ubuntu-debian based distribution
 				enabled: true
 			).save(failOnError: true)			
 		}
-		gug.addToUsers(adminUser)
-		gug.addToUsers(adminUser2)
-		gug.addToUsers(adminUser3)
-		gug.addToUsers(adminUser4)
+		gug.addMember(adminUser)
+		gug.addMember(adminUser2)
+		gug.addMember(adminUser3)
+		gug.addMember(adminUser4)
 		gug.save()
 		
 		//admin user

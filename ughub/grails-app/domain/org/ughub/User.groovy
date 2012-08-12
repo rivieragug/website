@@ -16,8 +16,7 @@ class User {
 	String lastName
 
 
-	static belongsTo = Group
-	static hasMany = [openIds: OpenID, groups:Group]
+	static hasMany = [openIds: OpenID]
 	
 	static constraints = {
 		username blank: false, unique: true
@@ -45,5 +44,9 @@ class User {
 
 	String toString() {
 		"$firstName $lastName"
+	}
+
+	def getGroups() {
+		Membership.findAllWhere(user: this).collect { it.group }
 	}
 }

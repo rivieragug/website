@@ -109,8 +109,8 @@
 			<!-- Membres -->
 			<ul class="span3 well sidebar-nav thumbnails">
 				<dt><g:message code="group.membres.label" default="Membres" /></dt>
-				<g:if test="${groupInstance?.users}">
-					<g:each in="${groupInstance.users}" var="u">
+				<g:if test="${groupInstance?.members}">
+					<g:each in="${groupInstance.members}" var="u">
 						<li class="span3">
 								<%/*<img src="${createLink(action:'show',controller:'image', id:s?.minilogo?.id)}" title="${s?.encodeAsHTML()}" alt="${s?.encodeAsHTML()}" class="pull-left"/>*/%>
 								<img src="http://placehold.it/48x48" title="${s?.encodeAsHTML()}" alt="${s?.encodeAsHTML()}" class="sponsor-logo pull-left"/>
