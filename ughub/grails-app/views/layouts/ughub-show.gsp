@@ -38,16 +38,16 @@ body {
 				</a>
 				<sec:ifLoggedIn>
 					<ul class="nav">
-			        	<li><g:link controller="home"><i class="icon-home icon-white"></i></g:link></li>
-			        </ul>
+	        	<li><g:link controller="home"><i class="icon-home icon-white"></i></g:link></li>
+	        </ul>
 					<a class="brand" href="${g.createLink(controller: "home")}">UG-hub Home!</a>
 					<div class="btn-group pull-right">
-						<a class="btn dropdown-toggle" data-toggle="dropdown" href="${g.createLink(controller: "user", action:"show")}">
+						<a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
 							<i class="icon-user"></i>&nbsp;<ug:currentUser prop="firstName"/> <ug:currentUser prop="lastName"/> 
 							<span class="caret"></span>
 						</a>
 						<ul class="dropdown-menu">
-							<li><a href="#">Profile</a></li>
+							<li><a href="${g.createLink(controller: "user", action:"show")}">Profile</a></li>
 							<li class="divider"></li>
 							<li><g:link controller='logout'>Sign out</g:link></li>
 						</ul>
