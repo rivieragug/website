@@ -40,6 +40,9 @@ class OauthService {
 	 * @return
 	 */
 	def redeemToken(code) {
+  	if (!oauthConfig['clientsecret'] || oauthConfig['clientsecret'] == '') {
+  		log.warn "OAuth clientsecret is empty! Check your Config.groovy"
+  	}
 		def http = new HTTPBuilder( 'https://accounts.google.com' )
 		
 		def postBody = [
