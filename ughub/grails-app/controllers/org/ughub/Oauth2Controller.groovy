@@ -32,6 +32,7 @@ class Oauth2Controller {
 					oauth : true, controlsDisabled:'disabled', firstName: userInfo['given_name'], lastName: userInfo['family_name']])
 			}else {
 				//need a login
+				println email
 				springSecurityService.reauthenticate email
 				redirect uri: config.successHandler.defaultTargetUrl
 			}

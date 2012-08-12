@@ -11,7 +11,6 @@ class HomeController {
 	def openIDAuthenticationFilter
 	
     def index() { 
-		
 		def config = SpringSecurityUtils.securityConfig
 
 		[openIdPostUrl: "${request.contextPath}$openIDAuthenticationFilter.filterProcessesUrl",

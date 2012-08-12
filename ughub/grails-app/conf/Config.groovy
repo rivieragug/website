@@ -8,8 +8,8 @@
                              "file:${userHome}/.grails/${appName}-config.groovy"]
  if (System.properties["${appName}.config.location"]) {
     grails.config.locations << "file:" + System.properties["${appName}.config.location"]
- }
-
+ } 
+ 
 grails.project.groupId = appName // change this to alter the default package name and Maven publishing destination
 grails.mime.file.extensions = true // enables the parsing of file extensions from URLs into the request format
 grails.mime.use.accept.header = false
@@ -124,3 +124,8 @@ grails.plugins.springsecurity.interceptUrlMap = [
 
 // Add the following line into ~/.grails/ughub-config.groovy
 // org.ughub.oauth.clientsecret = '##########################'
+if (System.properties["org.ughub.oauth.clientsecret"]) {
+	org.ughub.oauth.clientsecret = System.properties["org.ughub.oauth.clientsecret"]
+	println System.properties["org.ughub.oauth.clientsecret"]
+ }
+
