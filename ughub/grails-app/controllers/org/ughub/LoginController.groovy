@@ -32,6 +32,11 @@ class LoginController {
 	 * Dependency injection for the springSecurityService.
 	 */
 	def springSecurityService
+	
+	/**
+	 * Injected oauth service
+	 */
+	def oauthService
 
 	/**
 	 * Default action; redirects to 'defaultTargetUrl' if logged in, /login/auth otherwise.
@@ -58,10 +63,13 @@ class LoginController {
 		}
 
 		String view = 'auth'
+		
+		
 		render view: view, model: [rememberMeParameter: config.rememberMe.parameter,
 								   openidIdentifier: config.openid.claimedIdentityFieldName,
 								   openIdPostUrl: "${request.contextPath}$openIDAuthenticationFilter.filterProcessesUrl",
-								   daoPostUrl:    "${request.contextPath}${config.apf.filterProcessesUrl}"]
+								   daoPostUrl:    "${request.contextPath}${config.apf.filterProcessesUrl}",
+								   oauthUrl:	oauthService.buildAccessTokenRequest()]
 	}
 
 	/**

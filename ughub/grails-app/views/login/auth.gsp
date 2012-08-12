@@ -15,11 +15,14 @@
         </ug:formcontrol>
         <g:submitButton name="Login"/>
 		</g:form>
-		
-		<g:form name="googleLogin" method="POST"  url ="${openIdPostUrl}"> 
-    	<g:hiddenField name="${openidIdentifier}" value="${openidIdentifier}"/>
-    	<g:submitButton name="googleLogin" value="Login with google... provided they allow us"/>
-    </g:form>    
+    
+    	<g:form name="oauthLogin" method="GET"  url ='${oauthUrl.providerUrl}'> 
+    	<g:hiddenField name="client_id" value="${oauthUrl.client_id}"/>
+    	<g:hiddenField name="scope" value="${oauthUrl.scope}"/>
+    	<g:hiddenField name="redirect_uri" value="${oauthUrl.redirect}"/>
+    	<g:hiddenField name="response_type" value="${oauthUrl.response_type}"/>
+    	<g:submitButton name="googleLogin" value="Login with google through OAuth"/>
+    	</g:form>    
     </div>
 </body>
 </html>

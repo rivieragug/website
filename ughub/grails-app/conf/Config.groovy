@@ -119,6 +119,8 @@ grails.plugins.springsecurity.interceptUrlMap = [
   '/group/show/*':    ['IS_AUTHENTICATED_ANONYMOUSLY'],
   '/image/show/*':    ['IS_AUTHENTICATED_ANONYMOUSLY'],
   '/':                ['IS_AUTHENTICATED_ANONYMOUSLY'],
+  '/oauth2/**':        ['IS_AUTHENTICATED_ANONYMOUSLY'],
 	'/**':              ['ROLE_BASE','IS_AUTHENTICATED_FULLY']
  ]
 
+org.ughub.oauth.clientsecret= '##########################'

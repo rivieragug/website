@@ -11,10 +11,10 @@
           <g:textField name="username" value="${username}"/>
         </ug:formcontrol>
       	<ug:formcontrol label='Name'>
-          <g:textField name="firstName"/>
+          <g:textField name="firstName" value="${firstName}"/>
         </ug:formcontrol>
       	<ug:formcontrol label='Last Name'>
-          <g:textField name="lastName"/>
+          <g:textField name="lastName" value="${lastName}"/>
         </ug:formcontrol>
       	<ug:formcontrol label='Password'>
           <g:passwordField name="password"/>
