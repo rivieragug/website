@@ -63,12 +63,12 @@
 							<g:form class="pull-right">
 								<g:hiddenField name="id" value="${groupInstance?.id}" />
 								<div>
-									<g:link class="btn" action="edit" id="${groupInstance?.id}">
-										<i class="icon-pencil"></i>
+									<g:link class="btn" controller="event" action="list" id="${groupInstance?.id}">
+										<i class="icon-list"></i>
 										<g:message code="default.button.list.label" default="Lister tous les events" />
 									</g:link>
 									<button class="btn btn-success" type="submit" name="_action_delete">
-										<i class="icon-trash icon-white"></i>
+										<i class="icon-pencil icon-white"></i>
 										<g:message code="default.button.creer.label" default="Créer un event" />
 									</button>
 								</div>
@@ -109,8 +109,8 @@
 			<!-- Membres -->
 			<ul class="span3 well sidebar-nav thumbnails">
 				<dt><g:message code="group.membres.label" default="Membres" /></dt>
-				<g:if test="${groupInstance?.users}">
-					<g:each in="${groupInstance.users}" var="u">
+				<g:if test="${groupInstance?.members}">
+					<g:each in="${groupInstance.members}" var="u">
 						<li class="span3">
 								<%/*<img src="${createLink(action:'show',controller:'image', id:s?.minilogo?.id)}" title="${s?.encodeAsHTML()}" alt="${s?.encodeAsHTML()}" class="pull-left"/>*/%>
 								<img src="http://placehold.it/48x48" title="${s?.encodeAsHTML()}" alt="${s?.encodeAsHTML()}" class="sponsor-logo pull-left"/>
