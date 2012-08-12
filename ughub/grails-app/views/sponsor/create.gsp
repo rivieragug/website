@@ -47,7 +47,7 @@
 				</ul>
 				</bootstrap:alert>
 				</g:hasErrors>
-
+                <div class="span4">
 				<fieldset>
 					<g:form class="form-horizontal" action="create" >
 						<fieldset>
@@ -56,7 +56,7 @@
 					          <g:textField name="companyName" value="${sponsorInstance.companyName}"/>
 					        </ug:formcontrol>
 					        <ug:formcontrol label='Tell us about you'>
-					          <g:textArea name="description" value="${sponsorInstance.description}"/>
+					          <g:textArea name="description" style="height: 200px;" value="${sponsorInstance.description}"/>
 					        </ug:formcontrol>
 					        <ug:formcontrol label='Your website'>
 					          <g:textField type="url" name="website" value="${sponsorInstance.website}"/>
@@ -79,10 +79,23 @@
 						</fieldset>
 					</g:form>
 				</fieldset>
+			    </div>
+                <div class="span4 nav" style="float:right">
+                <h2>Raise Your Brand Awareness</h2>
+                <h3>Sophia Antipolis based, Get involved</h3>
+                If like us you want French Riviera, Sophia Antipolis
+Our contributors are active as speakers on the technical IT conferences and forums.
+Enter into lively debates on several different media. 
+We are building up a Collaborative User Group platform (UgHub) to federate all Rivuera User Group.
+Be one of the first to help use site for up-to-date news on best practice ideas, new technologies and advice - offering them a platform for their voice and opinion.
 
-				
-			</div>
+Be the first one means that you can tap into that environment and add the weight of your name and brand to a well respected IT social network
+offers something different in the IT field, a channel direct to the heart of IT professionals. 
 
+If you believe in your brand and your product and want to promote it to a IT geek audience, forming an alliance with us should be an essential part of your business development plan.
+
+We have a range of sponsorship opportunities available to suit a variety of budgets. 
+                </div>
 		</div>
 
 	</body>
