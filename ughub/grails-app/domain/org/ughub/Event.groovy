@@ -9,6 +9,8 @@ class Event {
 
 	Group organizingGroup
 
+	static hasMany = [participatingGroups: Group]
+
 	static belongsTo = Group
     static constraints = {
 		name()

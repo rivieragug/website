@@ -81,7 +81,9 @@
 							<g:each in="${groupInstance.events}" var="e">
 								<dt><g:link controller="event" action="show" id="${e.id}">${e?.date?.encodeAsHTML()} - ${e?.encodeAsHTML()}</g:link></dt>
 								<dd><h4>TYPE : ${e?.type?.encodeAsHTML()}</h4></dd>
-								<dd><img src="http://placehold.it/170x170" title="${s?.encodeAsHTML()}" alt="${s?.encodeAsHTML()}" class="event-image pull-left"/><div class="right-bloc">${e?.description?.encodeAsHTML()}</div></dd>
+								<dd><img src="http://placehold.it/170x170" title="${s?.encodeAsHTML()}" alt="${s?.encodeAsHTML()}" class="event-image pull-left"/><div class="right-bloc">
+								<markdown:renderHtml>${e.description}</markdown:renderHtml>
+								</div></dd>
 								<hr class="separator"/>
 							</g:each>
 
