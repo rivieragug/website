@@ -3,7 +3,7 @@
 <!doctype html>
 <html>
 	<head>
-		<meta name="layout" content="ughub-main">
+		<meta name="layout" content="ughub-show">
 		<g:set var="entityName" value="${message(code: 'user.label', default: 'User')}" />
 		<title><g:fieldValue bean="${userInstance}" field="firstName"/> 
             <g:fieldValue bean="${userInstance}" field="lastName"/></title>
@@ -25,7 +25,7 @@
 				</g:if>
 
 
-				<dl>
+				<dl class="well">
 				
           <g:if test="${userInstance?.username}">
             <dt><g:message code="user.username.label" default="Username" /></dt>

@@ -56,3 +56,19 @@ hr {
 .twitter {
   padding: 10px 0 0 45px;
 }
+
+.right-bloc {
+  margin-left: 200px;
+}
+
+.sponsor-logo {
+  width: 48px;
+}
+
+.event-image {
+  width: 170px;
+}
+
+.separator {
+  clear: both;
+}

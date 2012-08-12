@@ -63,29 +63,62 @@ _Warning_: this install intructions is only for Ubuntu-debian based distribution
 					gug.save()
 				}
 			}
-    		setUpUsers()
-			setUpSponsors()
+    		setUpUsers(gug)
+			setUpSponsors(gug)
 //		}
 			addTagsToDomainClasses()
-			
 	}
 			
     
 	
-	def setUpSponsors = {
+	def setUpSponsors = {gug->
 		if(!Sponsor.count()) {
-			new Sponsor(companyName:"SOPRA", 
+			def logo = new File('testdata', 'logo.jpeg').bytes
+    		def img = new Image(data: logo, mimetype: 'image/jpeg').save(failOnError: true)
+				
+			def sopra = new Sponsor(companyName:"SOPRA", 
 				        description:"SSII intersted in J2EE based technologies",
-						 website:new URL("http://grails.org/")).save(failOnError: true)
-		
+						 website:new URL("http://grails.org/"),
+						 minilogo: img).save(failOnError: true)
+			
+			def avisto = new Sponsor(companyName:"AVISTO", 
+				        description:"SSII intersted in J2EE based technologies",
+						 website:new URL("http://grails.org/"),
+						 minilogo: img).save(failOnError: true)
+			def sopra2 = new Sponsor(companyName:"SOPRA2", 
+				        description:"SSII intersted in J2EE based technologies",
+						 website:new URL("http://grails.org/"),
+						 minilogo: img).save(failOnError: true)
+			
+			def avisto2 = new Sponsor(companyName:"AVISTO2", 
+				        description:"SSII intersted in J2EE based technologies",
+						 website:new URL("http://grails.org/"),
+						 minilogo: img).save(failOnError: true)
+			def sopra3 = new Sponsor(companyName:"SOPRA3", 
+				        description:"SSII intersted in J2EE based technologies",
+						 website:new URL("http://grails.org/"),
+						 minilogo: img).save(failOnError: true)
+			
+			def avisto3 = new Sponsor(companyName:"AVISTO3", 
+				        description:"SSII intersted in J2EE based technologies",
+						 website:new URL("http://grails.org/"),
+						 minilogo: img).save(failOnError: true)
+			gug.addToSponsors(sopra)
+			gug.addToSponsors(avisto)
+			gug.addToSponsors(sopra2)
+			gug.addToSponsors(avisto2)
+			gug.addToSponsors(sopra3)
+			gug.addToSponsors(avisto3)
+			gug.save()
 		}
+		
 	}
 	
-	
+
 	/**
 	 * Creates the admin user, the roles and assigns them
 	 */
-	def setUpUsers = {
+	def setUpUsers = {gug->
 		def adminUser = User.findByUsername('admin')
 		if (adminUser == null){
 			adminUser = new User(
@@ -96,7 +129,41 @@ _Warning_: this install intructions is only for Ubuntu-debian based distribution
 				enabled: true
 			).save(failOnError: true)			
 		}
-		
+		def adminUser2 = User.findByUsername('admin2')
+		if (adminUser2 == null){
+			adminUser2 = new User(
+				username: 'admin2',
+				password: 'admin2',
+				firstName: 'admin2',
+				lastName: 'admin2',
+				enabled: true
+			).save(failOnError: true)			
+		}
+		def adminUser3 = User.findByUsername('admin3')
+		if (adminUser3 == null){
+			adminUser3 = new User(
+				username: 'admin3',
+				password: 'admin3',
+				firstName: 'admin3',
+				lastName: 'admin3',
+				enabled: true
+			).save(failOnError: true)			
+		}
+		def adminUser4 = User.findByUsername('admin4')
+		if (adminUser4 == null){
+			adminUser4 = new User(
+				username: 'admin4',
+				password: 'admin4',
+				firstName: 'admin4',
+				lastName: 'admin4',
+				enabled: true
+			).save(failOnError: true)			
+		}
+		gug.addToUsers(adminUser)
+		gug.addToUsers(adminUser2)
+		gug.addToUsers(adminUser3)
+		gug.addToUsers(adminUser4)
+		gug.save()
 		
 		//admin user
 		
@@ -124,8 +191,9 @@ _Warning_: this install intructions is only for Ubuntu-debian based distribution
 				}
 			
 		}
-		}
-	
+	}
+
+
     def destroy = {
     }
 }

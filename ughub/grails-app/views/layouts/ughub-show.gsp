@@ -30,53 +30,65 @@ body {
 <body>
 
 	<div class="navbar navbar-fixed-top">
-		<div class="navbar-inner">
-			<div class="container-fluid">
-				<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"> 
-					<span class="icon-bar"></span> 
-					<span class="icon-bar"></span> <span class="icon-bar"></span>
-				</a>
-					<ul class="nav">
-			        	<li><g:link controller="home"><i class="icon-home icon-white"></i></g:link></li>
-			        </ul>
-			        <a class="brand" href="${g.createLink(controller: "home")}">UG-hub Home!</a>
-				<sec:ifLoggedIn>
-					<div class="btn-group pull-right">
-						<a class="btn dropdown-toggle nav-button" data-toggle="dropdown" href="${g.createLink(controller: "user", action:"show")}" style="min:width: 200px;">
-							<i class="icon-user"></i>&nbsp;<ug:currentUser prop="firstName"/> <ug:currentUser prop="lastName"/> 
-							<span class="caret"></span>
-						</a>
-						<ul class="dropdown-menu">
-							<li><a href="#">Profile</a></li>
-							<li class="divider"></li>
-							<li><g:link controller='logout'>Sign out</g:link></li>
-						</ul>
-					</div>
-				</sec:ifLoggedIn>
-				<sec:ifNotLoggedIn>
-					<div class="btn-group pull-right">
-						<a class="btn dropdown-toggle" data-toggle="dropdown" href="#" style="min-width: 200px;">
-							<i class="icon-user"></i>&nbsp;LOGIN<span class="caret"></span>
-						</a>
-						<ul class="dropdown-menu">
-							<li><g:link controller='user'>Login</g:link></li>
-							<li class="divider"></li>
-							<li><g:link controller='user' action='create'>Register</g:link></li>
-						</ul>
-					</div>
-				</sec:ifNotLoggedIn>
+    <div class="navbar-inner">
+        <div class="container">
+            <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                <i class="icon-bar"></i>
+                <i class="icon-bar"></i>
+                <i class="icon-bar"></i>
+            </a>
 
-				<div class="nav-collapse">
-					<ul class="nav">
-						<!--<li class="active"><a href="#">Home</a></li>-->
-						<li><a href="#about">About</a></li>
-						<li><a href="#contact">Contact</a></li>
-						<!--li><a href="#contact">Admin</a></li-->
-					</ul>
-				</div>
-			</div>
-		</div>
-	</div>
+
+						<!-- User Button -->
+            <div class="pull-right">
+              <div>
+								<sec:ifLoggedIn>
+	                <div class="btn-group">
+										<a class="btn btn-inverse dropdown-toggle nav-button" data-toggle="dropdown" href="#">
+											<i class="icon-user icon-white"></i>&nbsp;<ug:currentUser prop="firstName"/> <ug:currentUser prop="lastName"/> 
+											<span class="caret"></span>
+										</a>
+										<ul class="dropdown-menu">
+											<li><a href="${g.createLink(controller: "user", action:"show")}">Profile</a></li>
+											<li class="divider"></li>
+											<li><g:link controller='logout'>Sign out</g:link></li>
+										</ul>
+	                </div>
+								</sec:ifLoggedIn>
+
+								<sec:ifNotLoggedIn>
+	                <div class="btn-group">
+	                    <a class="btn btn-inverse dropdown-toggle" data-toggle="dropdown" href="#">
+	                        Log In / Sign Up
+	                    </a>
+			                  <ul class="dropdown-menu pull-right">
+													<li><g:link controller='user'>Login</g:link></li>
+													<li class="divider"></li>
+													<li><g:link controller='user' action='create'>Register</g:link></li>
+												</ul>
+
+	                </div>
+								</sec:ifNotLoggedIn>
+              </div>
+            </div>
+
+            <!-- home icon -->
+						<g:link controller="home" class="brand">
+							<i class="icon-home icon-white" style="margin-top: 6px;"></i> UG-hub Home!
+						</g:link>
+            <!-- nav bar buttons -->
+            <div class="nav-collapse">
+              <ul class="nav">
+              	<li>
+								</li>	
+								<li><a href="#about">About</a></li>
+								<li><a href="#contact">Contact</a></li>
+              </ul>
+
+            </div>
+        </div>
+    </div>
+   </div>
 
 	<div class="row-fluid">
 		<div class="span1"></div>
