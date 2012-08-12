@@ -4,14 +4,19 @@ import grails.util.Environment
 import org.codehaus.groovy.grails.commons.ConfigurationHolder
 
 class BootStrap {
-def grailsApplication
-def tagService
+	def grailsApplication
+	def tagService
+
     def init = { servletContext ->
 		checkOauthSecret()
 //    	if (Environment.current == Environment.DEVELOPMENT){
+
+
+
 			def gug = Group.findByName("Coding Week-End Group")
     		if (!gug) {
-    			def logo = new File('testdata', 'logo.jpeg').bytes
+
+    			def logo = grailsApplication.mainContext.getResource('/images/logo.jpeg').inputStream.bytes
     			def img = new Image(data: logo, mimetype: 'image/jpeg').save(failOnError: true)
 				gug = new Group(
 					name: "Coding Week-End Group",
