@@ -17,7 +17,7 @@ class OauthService {
 		'clientid' : '596498673516.apps.googleusercontent.com',
 		'clientsecret' : config.org.ughub.oauth.clientsecret,
 		'scope' : 'https://www.googleapis.com/auth/userinfo.email https://www.googleapis.com/auth/userinfo.profile',
-		'redirect' : 'http://localhost:8080/ughub/oauth2/callback',
+		'redirect' : "${config.grails.serverURL}/oauth2/callback",
 		'responsetype' : 'code',
 		'providerURL' : 'https://accounts.google.com/o/oauth2/auth']
 	
