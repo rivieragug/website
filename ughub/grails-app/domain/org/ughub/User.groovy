@@ -2,7 +2,7 @@ package org.ughub
 
 class User {
 
-	transient springSecurityService
+	//transient springSecurityService
 
 	String username
 	String password
@@ -31,7 +31,7 @@ class User {
 	Set<Authority> getAuthorities() {
 		UserAuthority.findAllByUser(this).collect { it.authority } as Set
 	}
-
+/*
 	def beforeInsert() {
 		encodePassword()
 	}
@@ -39,10 +39,10 @@ class User {
 	def beforeUpdate() {
 		//encodePassword()
 	}
-
 	protected void encodePassword() {
 		password = springSecurityService.encodePassword(password)
 	}
+*/
 
 	String toString() {
 		"$firstName $lastName"
