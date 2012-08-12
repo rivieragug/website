@@ -29,7 +29,7 @@ class BlogController {
 		String description = params['description']
 		blog.setDescription(description)
 		
-		Group refGroup = Group.findByName(params['group.id'])
+		Group refGroup = Group.findById(params['group.id'])
 		blog.setGroup(refGroup)
 		blog.setCreationDate(new Date())
 		blog.setUpdateDate(new Date())
@@ -37,9 +37,10 @@ class BlogController {
 		if (!blog.save()) {
 				flash.put('name', name)
 				flash.put('description', description)
+				flash.put('group.id', refGroup?.id)
 		
 			flash.message='Failed to create blog'
-			redirect(action : 'create',params:["group.id":params['group.id']])
+			redirect(action : 'create')
 		} else {
 			redirect(controller:'blog', action:'list')
 		}

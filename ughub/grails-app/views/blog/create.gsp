@@ -45,11 +45,14 @@
 					<g:textArea name="description" rows="20" cols="80"
 						value="${(flash.description==null)?'':flash.description}" />
 				</ug:formcontrol>
+				<ug:formcontrol label='Related group'>
+					<g:select name="group.id" from="${Group.findAll()}" optionKey="id"
+						value="${(flash['group.id']==null)?'':flash['group.id']}"/>
+				</ug:formcontrol>
 				<div class="form-actions">
 					<g:submitButton class="btn btn-primary" name="create"
 						value="Create" />
 				</div>
-				<g:select name="group.id" from="${Group.findAll()}" />
 			</g:form>
 		</div>
 	</div>

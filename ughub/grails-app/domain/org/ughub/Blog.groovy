@@ -12,9 +12,9 @@ class Blog {
 
 	static hasMany = [posts: Post]
     static constraints = {
-		name()
-		description(nullable:true)
-		group()
+		name(unique: true, blank: false)
+		description(nullable: true)
+		group(nullable: false)
 		creationDate()
     }
     
