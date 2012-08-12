@@ -11,7 +11,6 @@
 
 			<div class="span2 well sidebar-nav">
 				<ul class="nav nav-list">
-					<ul class="nav nav-list">
 						<li class="nav-header">${entityName}</li>
 						<li>
 							<g:link class="list" action="list">
@@ -26,7 +25,6 @@
 							</g:link>
 						</li>
 					</ul>
-				</div>
 			</div>
 			
 			<div class="span8 content">
