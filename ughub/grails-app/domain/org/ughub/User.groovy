@@ -11,7 +11,13 @@ class User {
 	boolean accountLocked
 	boolean passwordExpired
 
-	static hasMany = [openIds: OpenID]
+	Set tags
+	String firstName
+	String lastName
+
+
+	static belongsTo = Group
+	static hasMany = [openIds: OpenID, groups:Group]
 	
 	static constraints = {
 		username blank: false, unique: true
@@ -39,6 +45,6 @@ class User {
 	}
 
 	String toString() {
-		username
+		"$firstName $lastName"
 	}
 }

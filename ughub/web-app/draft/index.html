@@ -19,17 +19,14 @@
     </style>
     <link href="assets/css/bootstrap-responsive.min.css" rel="stylesheet">
     <link href="assets/css/application.css" rel="stylesheet">
+    <link href="assets/css/skin.css" rel="stylesheet"/>
 
     <!--[if lt IE 9]>
       <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
 
     <link rel="shortcut icon" href="assets/ico/favicon.ico">
-    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/ico/apple-touch-icon-144-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/ico/apple-touch-icon-114-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/ico/apple-touch-icon-72-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-57-precomposed.png">
-  </head>
+   </head>
 
   <body>
 
@@ -110,7 +107,12 @@
               <div class="span8">
                 <h2>Welcome to Riviera Groovy &amp; Grails Users Group!</h2>
                 <br/>
-                <p><img src="assets/img/slider-image1.png"/></p>
+                <ul id="slider" class="jcarousel-skin-tango">
+                   <li><img src="assets/img/slider-image1.png"/></li>
+                   <li><img src="assets/img/slider-image2.png"/></li>
+                   <li><img src="assets/img/slider-image3.png"/></li>
+                   <li><img src="assets/img/slider-image4.png"/></li>
+                </ul>
                 <!--p><a class="btn btn-info" href="#">Details &raquo;</a></p-->
               </div>
 
@@ -120,10 +122,10 @@
                   new TWTR.Widget({
                     version: 2,
                     type: 'search',
-                    search: 'RivieraGUG OR RivieraCWE OR #Groovy OR #Grails',
+                    search: 'RivieraGUG OR #RivieraCWE',
                     interval: 30000,
-                    title: 'Riviera GUG',
-                    subject: 'Groovy & Grails Tweets',
+                    title: 'Twitter Stream',
+                    subject: 'Riviera Coding Weekend',
                     width: 300,
                     height: 300,
                     theme: {
@@ -169,6 +171,15 @@
 
     <script src="assets/js/jquery.js"></script>
     <script src="assets/js/bootstrap.min.js"></script>
+    <script src="assets/js/jquery.jcarousel.min.js"></script>
+
+    <script type="text/javascript">
+      jQuery(document).ready(function() {
+        jQuery('#slider').jcarousel({
+          visible: 1
+        });
+    });
+    </script>
 
   </body>
 </html>

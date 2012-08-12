@@ -26,12 +26,12 @@
 	
 </div>
 
-<div class="fieldcontain ${hasErrors(bean: sponsorInstance, field: 'logo', 'error')} ">
-	<label for="logo">
-		<g:message code="sponsor.logo.label" default="Logo" />
+<div class="fieldcontain ${hasErrors(bean: sponsorInstance, field: 'minilogo', 'error')} ">
+	<label for="minilogo">
+		<g:message code="sponsor.minilogo.label" default="Minilogo" />
 		
 	</label>
-	<g:textField name="logo" value="${sponsorInstance?.logo}" />
+	<g:select id="minilogo" name="minilogo.id" from="${org.ughub.Image.list()}" optionKey="id" required="" value="${sponsorInstance?.minilogo?.id}" class="many-to-one"/>
 </div>
 
 <div class="fieldcontain ${hasErrors(bean: sponsorInstance, field: 'website', 'error')} ">

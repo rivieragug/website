@@ -58,11 +58,12 @@ grails.project.dependency.resolution = {
 
         //runtime ":database-migration:1.1"
 		compile ":mongodb:1.0.0.GA"
-        compile ':cache:1.0.0'
+        	compile ':cache:1.0.0'
 		compile ":spring-security-core:1.2.7.3"
 		compile ":cloud-foundry:1.2.3"
 		compile ":spring-security-openid:1.0.4"
 		compile ":console:1.2"
 		compile ":rest:0.7"
+        	compile ":markdown:1.0.0.RC1"
     }
 }

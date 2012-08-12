@@ -5,9 +5,9 @@ package org.ughub
 import org.junit.*
 import grails.test.mixin.*
 
-@TestFor(MemberController)
-@Mock(Member)
-class MemberControllerTests {
+@TestFor(UserController)
+@Mock(User)
+class UserControllerTests {
 
     def populateValidParams(params) {
         assert params != null
@@ -17,139 +17,139 @@ class MemberControllerTests {
 
     void testIndex() {
         controller.index()
-        assert "/member/list" == response.redirectedUrl
+        assert "/user/list" == response.redirectedUrl
     }
 
     void testList() {
 
         def model = controller.list()
 
-        assert model.memberInstanceList.size() == 0
-        assert model.memberInstanceTotal == 0
+        assert model.userInstanceList.size() == 0
+        assert model.userInstanceTotal == 0
     }
 
     void testCreate() {
         def model = controller.create()
 
-        assert model.memberInstance != null
+        assert model.userInstance != null
     }
 
     void testSave() {
         controller.save()
 
-        assert model.memberInstance != null
-        assert view == '/member/create'
+        assert model.userInstance != null
+        assert view == '/user/create'
 
         response.reset()
 
         populateValidParams(params)
         controller.save()
 
-        assert response.redirectedUrl == '/member/show/1'
+        assert response.redirectedUrl == '/user/show/1'
         assert controller.flash.message != null
-        assert Member.count() == 1
+        assert User.count() == 1
     }
 
     void testShow() {
         controller.show()
 
         assert flash.message != null
-        assert response.redirectedUrl == '/member/list'
+        assert response.redirectedUrl == '/user/list'
 
         populateValidParams(params)
-        def member = new Member(params)
+        def user = new User(params)
 
-        assert member.save() != null
+        assert user.save() != null
 
-        params.id = member.id
+        params.id = user.id
 
         def model = controller.show()
 
-        assert model.memberInstance == member
+        assert model.userInstance == user
     }
 
     void testEdit() {
         controller.edit()
 
         assert flash.message != null
-        assert response.redirectedUrl == '/member/list'
+        assert response.redirectedUrl == '/user/list'
 
         populateValidParams(params)
-        def member = new Member(params)
+        def user = new User(params)
 
-        assert member.save() != null
+        assert user.save() != null
 
-        params.id = member.id
+        params.id = user.id
 
         def model = controller.edit()
 
-        assert model.memberInstance == member
+        assert model.userInstance == user
     }
 
     void testUpdate() {
         controller.update()
 
         assert flash.message != null
-        assert response.redirectedUrl == '/member/list'
+        assert response.redirectedUrl == '/user/list'
 
         response.reset()
 
         populateValidParams(params)
-        def member = new Member(params)
+        def user = new User(params)
 
-        assert member.save() != null
+        assert user.save() != null
 
         // test invalid parameters in update
-        params.id = member.id
+        params.id = user.id
         //TODO: add invalid values to params object
 
         controller.update()
 
-        assert view == "/member/edit"
-        assert model.memberInstance != null
+        assert view == "/user/edit"
+        assert model.userInstance != null
 
-        member.clearErrors()
+        user.clearErrors()
 
         populateValidParams(params)
         controller.update()
 
-        assert response.redirectedUrl == "/member/show/$member.id"
+        assert response.redirectedUrl == "/user/show/$user.id"
         assert flash.message != null
 
         //test outdated version number
         response.reset()
-        member.clearErrors()
+        user.clearErrors()
 
         populateValidParams(params)
-        params.id = member.id
+        params.id = user.id
         params.version = -1
         controller.update()
 
-        assert view == "/member/edit"
-        assert model.memberInstance != null
-        assert model.memberInstance.errors.getFieldError('version')
+        assert view == "/user/edit"
+        assert model.userInstance != null
+        assert model.userInstance.errors.getFieldError('version')
         assert flash.message != null
     }
 
     void testDelete() {
         controller.delete()
         assert flash.message != null
-        assert response.redirectedUrl == '/member/list'
+        assert response.redirectedUrl == '/user/list'
 
         response.reset()
 
         populateValidParams(params)
-        def member = new Member(params)
+        def user = new User(params)
 
-        assert member.save() != null
-        assert Member.count() == 1
+        assert user.save() != null
+        assert Useer.count() == 1
 
-        params.id = member.id
+        params.id = user.id
 
         controller.delete()
 
-        assert Member.count() == 0
-        assert Member.get(member.id) == null
-        assert response.redirectedUrl == '/member/list'
+        assert User.count() == 0
+        assert User.get(user.id) == null
+        assert response.redirectedUrl == '/user/list'
     }
 }

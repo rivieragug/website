@@ -1,16 +1,16 @@
 <%@ page import="org.ughub.Sponsor" %>
+<%@ page import="org.ughub.Group" %>
 <!doctype html>
 <html>
 	<head>
-		<meta name="layout" content="ughub-main">
+		<meta name="layout" content="ughub-show">
 		<g:set var="entityName" value="${message(code: 'sponsor.label', default: 'Sponsor')}" />
 		<title><g:message code="default.create.sponsor" args="[entityName]" /></title>
 	</head>
 	<body>
 		<div class="row-fluid">
 			
-			<div class="span3">
-				<div class="well">
+			<div class="span2 well sidebar-nav">
 					<ul class="nav nav-list">
 						<li class="nav-header">${entityName}</li>
 						<li>
@@ -26,13 +26,12 @@
 							</g:link>
 						</li>
 					</ul>
-				</div>
 			</div>
 			
-			<div class="span9">
+			<div class="span8 content">
 
 				<div class="page-header">
-					<h1><g:message code="default.create.label" args="[entityName]" /></h1>
+					<h1><g:message code="default.create.sponsor" /></h1>
 				</div>
 
 				<g:if test="${flash.message}">
@@ -52,7 +51,25 @@
 				<fieldset>
 					<g:form class="form-horizontal" action="create" >
 						<fieldset>
-							<f:all bean="sponsorInstance"/>
+							<!--f:all bean="sponsorInstance"/-->
+					      	<ug:formcontrol label='Your organization'>
+					          <g:textField name="companyName" value="${sponsorInstance.companyName}"/>
+					        </ug:formcontrol>
+					        <ug:formcontrol label='Tell us about you'>
+					          <g:textArea name="description" value="${sponsorInstance.description}"/>
+					        </ug:formcontrol>
+					        <ug:formcontrol label='Your website'>
+					          <g:textField type="url" name="website" value="${sponsorInstance.website}"/>
+					        </ug:formcontrol>      
+					        <ug:formcontrol label='Which groups are you interested in'>
+							<g:select name="group.id"
+					          from="${Group.list()}"
+					          value=""
+					          optionKey="name" />
+					        </ug:formcontrol> 
+					          
+						    <g:textField name="comauto" style="width: 300px;"> </g:textField>
+						
 							<div class="form-actions">
 								<button type="submit" class="btn btn-primary">
 									<i class="icon-ok icon-white"></i>
@@ -62,13 +79,11 @@
 						</fieldset>
 					</g:form>
 				</fieldset>
-				
-				<div style="floating:right">
-				  <img class='image' src='${sponsorInstance.logo}'/>
-				</div>
+
 				
 			</div>
 
 		</div>
+
 	</body>
 </html>

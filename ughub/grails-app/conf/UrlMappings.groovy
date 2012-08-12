@@ -4,7 +4,7 @@ class UrlMappings {
 		
 
 		 "/login/openIdCreateAccount" {
-			controller = 'member'
+			controller = 'user'
 			action = 'createAccountOpenId'
 		 }
 		
@@ -13,6 +13,11 @@ class UrlMappings {
 				// apply constraints here
 			}
 		}
+
+		"/profile" 				(controller:"user", action: "show")
+		"/user/$id/profile" 	(controller: "user", action: "show")
+
+		'/index-dev'(view:'/index-dev')
 
 		"/"(controller:"home", action: 'index')
 		"500"(view:'/error')

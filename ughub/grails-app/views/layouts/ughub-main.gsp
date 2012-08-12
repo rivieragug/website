@@ -24,20 +24,19 @@
           <ul class="nav pull-right">
             
               <sec:ifLoggedIn>
-                <li class='active'><a href="#"><ug:currentMember prop="firstName"/> <ug:currentMember prop="lastName"/></a></li>
+                <li class='active'><a href="${g.createLink(controller: "user", action:"show")}"><ug:currentUser prop="firstName"/> <ug:currentUser prop="lastName"/></a></li>
                 <li>
                   <g:link controller='logout'>Logout</g:link>
                 </li>
               </sec:ifLoggedIn>
               <sec:ifNotLoggedIn>
                 <li>
-                  <g:link controller='member' action='create'>Register</g:link>
+                  <g:link controller='user' action='create'>Register</g:link>
                 </li> 
                 <li>
-                  <g:link controller='member'>Login</g:link>
+                  <g:link controller='user'>Login</g:link>
                 </li> 
               </sec:ifNotLoggedIn>
-            </li>
           </ul>
         </div>
       </div>

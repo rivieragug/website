@@ -3,14 +3,14 @@
 <!doctype html>
 <html>
 	<head>
-		<meta name="layout" content="ughub-main">
+	    <meta name="layout" content="ughub-show">
 		<g:set var="entityName" value="${message(code: 'sponsor.label', default: 'Sponsor')}" />
 		<title><g:message code="default.show.label" args="[entityName]" /></title>
 	</head>
 	<body>
 		<div class="row-fluid">
 			
-			<div class="span3">
+			<div class="span2 well sidebar-nav">
 				<div class="well">
 					<ul class="nav nav-list">
 						<li class="nav-header">${entityName}</li>
@@ -30,10 +30,12 @@
 				</div>
 			</div>
 			
-			<div class="span9">
+			<div class="span8 content">
 
 				<div class="page-header">
-					<h1><g:message code="default.show.label" args="[entityName]" /></h1>
+					<g:if test="${sponsorInstance?.companyName}">
+						<h1><g:fieldValue bean="${sponsorInstance}" field="companyName"/></h1>
+					</g:if>
 				</div>
 
 				<g:if test="${flash.message}">
@@ -42,18 +44,8 @@
 
 				<dl>
 				
-					<g:if test="${sponsorInstance?.companyName}">
-						<dt><g:message code="sponsor.companyName.label" default="Company Name" /></dt>
-						
-							<dd><g:fieldValue bean="${sponsorInstance}" field="companyName"/></dd>
-						
-					</g:if>
-				
 					<g:if test="${sponsorInstance?.description}">
-						<dt><g:message code="sponsor.description.label" default="Description" /></dt>
-						
 							<dd><g:fieldValue bean="${sponsorInstance}" field="description"/></dd>
-						
 					</g:if>
 				
 					<g:if test="${sponsorInstance?.groups}">
@@ -65,18 +57,15 @@
 						
 					</g:if>
 				
-					<g:if test="${sponsorInstance?.logo}">
-						<dt><g:message code="sponsor.logo.label" default="Logo" /></dt>
+					<g:if test="${sponsorInstance?.minilogo}">
+						<dt><g:message code="sponsor.minilogo.label" default="Minilogo" /></dt>
 						
-							<dd><g:fieldValue bean="${sponsorInstance}" field="logo"/></dd>
+							<dd><g:link controller="image" action="show" id="${sponsorInstance?.minilogo?.id}">${sponsorInstance?.minilogo?.encodeAsHTML()}</g:link></dd>
 						
 					</g:if>
 				
 					<g:if test="${sponsorInstance?.website}">
-						<dt><g:message code="sponsor.website.label" default="Website" /></dt>
-						
-							<dd><g:fieldValue bean="${sponsorInstance}" field="website"/></dd>
-						
+						<dd><a href="${sponsorInstance.website}"/></a></dd>
 					</g:if>
 				
 				</dl>
@@ -96,7 +85,13 @@
 				</g:form>
 
 			</div>
-
+			   <div class="sponsors">
+                 <div class="row-fluid">
+				   <g:img dir="img/" file="logo-sopra.png"/>
+				   <g:img dir="img/" file="logo-avisto.png"/>
+				   <g:img dir="img/" file="logo-les-satellites.png"/>
+                 </div>
+               </div>
 		</div>
 	</body>
 </html>
