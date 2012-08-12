@@ -7,6 +7,13 @@
       <h1>Register</h1>
       <g:message code="${flash.message}"/>
       <g:form  class="form-horizontal" name="userCreation" url="[action:'save',controller:'user']"> 
+      	<g:if test="${flash.GOOGLE_AUTH}">
+      		Oauth user creation with google profile
+      	</g:if>
+      	<g:else>
+      		Standard user name / password user creation
+      	</g:else>
+      	
       	<ug:formcontrol label='User Name'>
           <g:textField name="username" value="${username}"/>
         </ug:formcontrol>
