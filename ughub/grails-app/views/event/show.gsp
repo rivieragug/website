@@ -1,8 +1,6 @@
 <html>
 <head>
-	    <meta name="layout" content="ughub-show">
-		<g:set var="entityName" value="${message(code: 'event.label', default: 'Event')}" />
-		<title><g:message code="default.show.label" args="[entityName]" /></title>
+  <meta name="layout" content="ughub-main"/>
 </head>
 <body>
 
@@ -24,14 +22,28 @@
 							</g:link>
 						</li>
 					</ul>
+                <sec:ifLoggedIn>
+                    <g:form class="pull-right">
+                        <g:hiddenField name="id" value="${eventInstance?.id}" />
+                        <div>
+                            <g:link class="btn" action="edit" id="${eventInstance?.id}">
+                                <i class="icon-pencil"></i>
+                                <g:message code="default.button.edit.label" default="Edit" />
+                            </g:link>
+                            <button class="btn btn-danger" type="submit" name="_action_delete">
+                                <i class="icon-trash icon-white"></i>
+                                <g:message code="default.button.delete.label" default="Delete" />
+                            </button>
+                        </div>
+                    </g:form>
+                </sec:ifLoggedIn>
 				</div>
 		</div>
 	
     	<div class="span8 content">
-    		<h1>${eventInstance.name} <small>${eventInstance.type}</small></h1>
-            <g:if test="${flash.message}">
-                <bootstrap:alert class="alert-info">${flash.message}</bootstrap:alert>
-            </g:if>
+                <h1><g:if test="${eventInstance?.name}"><g:fieldValue bean="${eventInstance}" field="name"/></g:if>
+                    <small>${eventInstance.type}</small>
+                </h1>
             <h2>${eventInstance.date}</h2>
       		<hr>
             <g:link class="btn btn-large" action='edit' id="${eventInstance.id}">Edit</g:link>
@@ -40,6 +52,5 @@
     		</div>
     	</div>
 
-	</div>
 </body>
 </html>
