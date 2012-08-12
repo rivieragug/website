@@ -12,6 +12,8 @@ class Oauth2Controller {
 	 */
 	def oauthService
 	
+	def userService
+	
 	/**
 	 * Recover user information from the user
 	 * @return
@@ -33,8 +35,7 @@ class Oauth2Controller {
 					oauth : true, controlsDisabled:'disabled', firstName: userInfo['given_name'], lastName: userInfo['family_name']])
 			}else {
 				//need a login
-				println email
-				springSecurityService.reauthenticate email
+				userService.forceUserLogin(email)
 				redirect uri: config.successHandler.defaultTargetUrl
 			}
 		}
