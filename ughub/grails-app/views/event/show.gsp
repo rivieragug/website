@@ -4,7 +4,7 @@
 </head>
 <body>
     <div class="row-fluid">
-        <div class="span7 content">
+        <div class="span8 content">
             <!-- Event header -->
             <div class="page-header">
                 <sec:ifLoggedIn>

@@ -92,10 +92,9 @@ body {
 
 	<div class="row-fluid">
 		<div class="span1"></div>
-		<div class="span10">
+		<div class="span11">
 			<g:layoutBody />
 		</div>
-		<div class="span1"></div>
 	</div>
 
 	<r:layoutResources />
