@@ -1,0 +1,74 @@
+body {
+  background: url("../img/bg-main.png") repeat-x scroll 0 0 white;
+  color: #555555;
+  font-size: 14px;
+}
+
+.content {
+  background: #FCFCF9 url("../img/bg-content.png") repeat;
+  padding: 15px 30px;
+
+  -webkit-border-radius: 20px;
+     -moz-border-radius: 20px;
+          border-radius: 20px;
+
+     -moz-box-shadow: 0 0 10px 2px #ddd;
+  -webkit-box-shadow: 0 0 10px 2px #ddd;
+          box-shadow: 0 0 10px 2px #ddd;
+}
+
+p {
+  line-height: 1.5em;
+}
+
+li {
+  line-height: 34px;
+}
+
+hr {
+  border-top: 1px solid #ddd;
+  border-bottom: 1px solid #eee;
+}
+
+.sidebar-nav {
+  border: 1px solid #5D8AA8;
+
+  -webkit-border-radius: 15px;
+     -moz-border-radius: 15px;
+          border-radius: 15px;
+}
+
+.sidebar-icon {
+  float: left;
+  padding-right: 8px;
+}
+
+.slider-image {
+     -moz-box-shadow: 3px 3px 3px 3px #ddd;
+  -webkit-box-shadow: 3px 3px 3px 3px #ddd;
+          box-shadow: 3px 3px 3px 3px #ddd;
+}
+
+.sponsors {
+  padding: 10px 0 10px 0;
+}
+
+.twitter {
+  padding: 10px 0 0 45px;
+}
+
+.right-bloc {
+  margin-left: 200px;
+}
+
+.sponsor-logo {
+  width: 48px;
+}
+
+.event-image {
+  width: 170px;
+}
+
+.separator {
+  clear: both;
+}
